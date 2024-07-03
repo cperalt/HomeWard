@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .volunteer-image {
+    text-align: center;
+    margin-top: 0px; 
+    overflow: hidden;
+  }
+  
+  .volunteer-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center -30;
+  }
+
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    text-shadow: 0px 4px 4px rgba(0,0,0,.3);
+    font-weight: bold;
+    font-size: 2.125rem;
+    text-transform: uppercase;
+  }
+  
+  .title h2 {
+    margin-bottom: 180%;
+    color: #fff;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgb(103, 114, 157);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.secondtitle {
+    color: #67729D;
+    font-size: 30px;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    margin-top: 2%;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+.volunteer-opportunity p {
+    color: black;
+}
+
+.volunteer-opportunities {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap; 
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.volunteer-opportunity {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 21%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.volunteer-opportunity img {
+    width: 100%;
+    max-width: 300px; 
+    height: 350px; 
+    object-fit: cover; 
+    border-radius: 4px;
+    margin-bottom: 10px;
+    margin-top: 13%;
+    border: 1px solid #67729D;
+}
+
+.volunteer-opportunity h3 {
+    margin: 0;
+    color: #BB9CC0;
+    font-size: 20px;
+}
+
+.volunteer-opportunity p {
+    margin: 5px 0;
+}
+
+.sign-up {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding-bottom: 2%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #E7BCDE;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-content: center;
+}
+
+button:hover {
+    background-color: #BB9CC0;
+}
+
+.signup-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #67729D;
+    border-radius: 8px;
+    box-shadow: 0 0 100px rgb(103, 114, 157);
+}
+
+.impact-stories {
+    text-align: center;
+    padding-bottom: 3%;
+    font-size:30px;
+    color: #67729D;
+}
+
+.carousel {
+    width: 100vw;
+    overflow: hidden;
+}
+
+.wrap {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 250px;
+    justify-items: stretch;
+    animation: slide 45s linear infinite;
+}
+
+.wrap img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #67729D;
+}
+
+@keyframes slide {
+    to {
+        translate: calc(-4 * 250px);
+    }
+}
+
+.image-text-wrapper p {
+    font-size: 15px; 
+    color: #333; 
+    padding-top: 10px; 
+    text-align: center;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.image-text-wrapper {
+    height: 400px;
+    background-color: white;
+    box-shadow: 0 0 10px rgb(103, 114, 157);
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+
