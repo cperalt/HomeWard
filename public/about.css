@@ -1,0 +1,185 @@
+body{
+    width: 100vw;
+    background-color: #f8f9fa;
+    font-family: "Libre Baskerville", serif;
+}
+
+
+
+
+#hero-container{
+    top: 7rem ;
+    display: flex;
+background: url(./images/skyline.jpg) no-repeat center center;
+height: 20rem;
+width: 100vw;
+position: relative;
+background-position:center;
+background-size:cover;
+align-items: center;
+align-content: center;
+justify-content: center;
+}
+
+#hero-heading{
+    font-family: "Libre Baskerville", serif;
+    color: whitesmoke;
+    position: relative;
+    font-size: 5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.mission{
+    display: flex;
+    height: 30rem;
+    width: 100vw;
+    margin-top: 15rem;
+    box-sizing: border-box;
+    /* margin-bottom: rem; */
+    
+}
+
+#mission-heading{
+    position: relative;
+    font-family: "Libre Baskerville", serif;
+    font-size: 2rem;
+    text-align: center;
+     font-weight: bold;
+}
+
+.mission-text{
+    position: relative;
+   padding-left: 2rem;
+    height: 20rem;
+    width: 50rem;
+    padding-right: 3.5rem;
+   
+}
+
+.mission-text p {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    color: #34495e;
+    line-height: 2; 
+    text-align: center;
+}
+
+#mission-img{
+    position: relative;
+    padding-left: 8rem;
+    height: 30rem;
+
+}
+
+#mission-img img{
+    height: 22rem;
+    width: 35rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: .5rem;
+}
+
+.why{
+    display: flex;
+    height: 35rem;
+    width: 100vw;
+    /* margin-top: 15rem; */
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+
+.why-text{
+    position: relative;
+    padding-left: 2rem;
+     height: 20rem;
+     width: 50rem;
+     padding-right: 3rem;
+}
+
+.why-text p{
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    color: #34495e;
+    line-height: 2; 
+    text-align: center;
+
+}
+
+#why-heading{
+    position: relative;
+    font-family: "Libre Baskerville", serif;
+    font-size: 2rem;
+    text-align: center;
+     font-weight: bold;
+}
+
+#why-img{
+    position: relative;
+    padding-right: 15rem;
+    height: 30rem;
+    width: 30rem;
+    padding-left: 5rem;
+}
+
+#why-img img{
+    height: 22rem;
+    width: 35rem;
+    border-radius: .5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+#impact-container{
+    display: flex;
+background: url(./images/all-in.jpg) no-repeat center center;
+height: 20rem;
+width: 100vw;
+position: relative;
+background-position:center;
+background-size:cover;
+align-items: center;
+align-content: center;
+justify-content: center;
+}
+
+#impact-heading{
+    font-family: "Libre Baskerville", serif;
+    color: whitesmoke;
+    position: relative;
+    font-size: 1.7rem;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.contact {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+}
+
+#contact-button{
+    border-radius: .313rem;
+    position: relative;
+    border: 0;
+    cursor: pointer;
+    font-style: oblique;
+    background-color: rgb(225, 222, 222);
+    color: rgb(255, 255, 255);
+    height: 1.875rem;
+    width: 6rem;
+    font-weight: bold;
+  
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); 
+}
+
+.contact h3{
+    position: relative;
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.4rem;
+    text-align: center;
+     font-weight: bold;
+     color: #34495e;
+}
