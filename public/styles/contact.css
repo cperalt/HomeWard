@@ -1,0 +1,204 @@
+*, *:before, *:after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+    overscroll-behavior: none;
+    overflow: none;
+}
+
+
+html {
+    font-size: 12px;
+
+    @media only screen and (min-width: 481px) {
+        font-size: 16px;
+    }
+}
+
+.section-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    width: 100%;
+    height: 42vh;
+    top: 0;
+    z-index: -1;
+    overflow-x: hidden;
+
+    @media only screen and (min-width: 481px) {
+
+        
+    }
+}
+
+#hero_img {
+    width: 300%;
+    height: auto;
+    object-fit: contain;
+
+    @media only screen and (min-width: 481px) {
+        width: 100%;
+
+    }
+}
+
+.header-brand {
+    position: absolute;
+    width: 20rem;
+    color: black;
+
+    @media only screen and (min-width: 481px) {
+       width: 45rem; 
+    }
+}
+
+#header-text {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    text-align: center;
+    font-family: TTFirs;
+    color: white;
+
+    @media only screen and (min-width: 481px) {
+       font-size: 4.9rem; 
+    }
+}
+
+#building-icon {
+    position: absolute;
+    width: 8rem;
+    height: 8rem;
+}
+
+.section-middle {
+    display: flex;
+    /* align-items: space-between; */
+    justify-content: space-around;
+}
+
+/* #section-middle-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: yellow;
+} */
+
+.section-location {
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+}
+
+
+.section-bottom {
+    display: flex;
+    justify-content: space-around;
+    background-image: url('../images/Green-concrete-wall.jpg');
+}
+
+.button-next {
+    margin-bottom: 1rem;
+    font-size: 20px;
+    margin-top: 1.5rem;
+    height: 3.5rem;
+    border-radius: 9999px;
+    font-family: Silka, Montserrat;
+    color: #ffffff;
+    font-weight: 900;
+    color: black;
+}
+
+
+.section_square-2 {
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    border-radius: .5rem;
+    box-shadow: 4px 4px 12px #00000014;
+
+
+    @media only screen and (min-width: 481px) {
+        width: 34rem;
+    html {
+        font-size: 12px;
+    }
+    }
+}
+
+.section_square-2 > div {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0;
+}
+
+#full-name-label {
+    font-size: 20px;
+    margin-right: 1rem;
+    font-weight: 600;
+    color: black;
+    font-family: TTfirs, Montserrat;
+}
+
+.contact_label {
+    font-weight: 600;
+    color: black;
+    font-family: TTfirs, Montserrat;
+}
+
+#first-name, #last-name {
+    height: 3rem;
+    width: 9rem;
+    font-size: 20px;
+    border: 2px solid black;
+}
+
+.section_square2-inputs {
+    height: 3rem;
+    font-size: 20px;
+    width: 19rem;
+    border: 2px solid black;
+}
+
+input {
+    text-align: center;
+    border-radius: 9px;
+    background-color: #EDF2F7;
+    font-family: Silka;
+
+}
+
+
+.section-bottom-left {
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 20px;
+    border-radius: .5rem;
+    box-shadow: 4px 4px 12px #00000014;
+
+
+    @media only screen and (min-width: 481px) {
+        width: 34rem;
+    html {
+        font-size: 12px;
+    }
+    }
+}
+
+/* .contact-para {
+    font-size: 1.6rem;
+    font-family: TTFirs;
+    color: #ffffff;
+
+    @media only screen and (min-width: 481px) {
+        font-size: 2rem;
+        
+    }
+} */
