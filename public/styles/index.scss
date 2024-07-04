@@ -4,7 +4,7 @@ $secondary-color: #E7BCDE;
 html {
     margin: 0;
     padding: 0;
-    background-color: $primary-color;
+    width: 100%;
 }
 
 body {
@@ -14,11 +14,111 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    width: 100vw;
+}
+
+#menu {
+    display: none;
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
     width: 100%;
+    z-index: 1;
+    font-size: 1rem;
+    justify-content: space-between;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    /* padding: 0 40px; if volunteer button is deleted*/
+
+    li {
+        list-style: none;
+        margin: 10px;
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+#volunteer-btn {
+    display: block;
+    text-align: center;
+    align-content: center;
+    margin: 0 50px;
+    border: solid 1px black;
+    border-radius: 5px;
+    width: 150px;
+    background-color: red;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+#side-nav {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    width: 500px;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.8));
+    font-size: 2rem;
+}
+
+#side-navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 0;
+
+    li {
+        list-style: none;
+        margin: 20px;
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+#ribbon {
+    display: flex;
+    flex-direction: row-reverse;
+
+    img {
+        margin: 5px;
+    }
+}
+
+#side-volunteer-btn {
+    display: block;
+    text-align: center;
+    align-content: center;
+    border: solid 1px black;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    background-color: red;
+    font-size: 1rem;
+    color: white;
 }
 
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)), url("../img/foodkitchen.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)), url("../images/foodkitchen.jpeg");
     height: 400px;
     background-position: center;
     background-repeat: no-repeat;
@@ -46,8 +146,6 @@ body {
         border: solid 1px $primary-color;
     }
 }
-
-.headline {}
 
 .tabs {
     display: flex;
@@ -85,230 +183,248 @@ body {
 
 @keyframes highlight-one {
     0% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/handshake.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
     }
 
     1% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../img/handshake.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
     }
 
     5% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../img/handshake.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
     }
 
     10% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../img/handshake.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
     }
 
     15% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../img/handshake.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
     }
 
     25% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../img/handshake.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
     }
 
     30% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../img/handshake.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
     }
 
     40% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)), url("../img/handshake.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
     }
 
     50% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../img/handshake.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
     }
 
     75% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.7)), url("../img/handshake.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
     }
 
     100% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../img/handshake.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
     }
 }
 
 @keyframes highlight-two {
     0% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     1% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     5% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     10% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     15% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     25% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     30% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     40% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     50% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     75% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     100% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 }
 
 @keyframes highlight-three {
     0% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     1% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     5% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     10% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     15% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     25% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     30% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     40% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     50% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     75% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 
     100% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     }
 }
 
 @keyframes highlight-four {
     0% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/convo.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
     }
 
     1% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../img/convo.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
     }
 
     5% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../img/convo.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
     }
 
     10% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../img/convo.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
     }
 
     15% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../img/convo.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
     }
 
     25% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../img/convo.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
     }
 
     30% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../img/convo.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
     }
 
     40% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)), url("../img/convo.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
     }
 
     50% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../img/convo.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
     }
 
     75% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.7)), url("../img/convo.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
     }
 
     100% {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../img/convo.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
     }
 }
 
 .tab--one {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../img/handshake.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
 
     &:hover {
         animation-name: highlight-one;
         animation-duration: 0.25s;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../img/handshake.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
 
     }
 }
 
 .tab--two {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     background-position: bottom;
 
     &:hover {
         animation-name: highlight-two;
         animation-duration: 0.25s;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
 
     }
 }
 
 .tab--three {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
     background-position: top;
 
     &:hover {
         animation-name: highlight-three;
         animation-duration: 0.25s;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../img/classroom.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
 
     }
 }
 
 .tab--four {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../img/convo.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
 
     &:hover {
         animation-name: highlight-four;
         animation-duration: 0.25s;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../img/convo.jpg");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
 
+    }
+}
+
+@media screen and (max-width: 920px) {
+    #navbar {
+        display: none;
+    }
+
+    #menu {
+        display: inline;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    #ribbon {
+        cursor: pointer;
     }
 }
