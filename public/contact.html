@@ -17,28 +17,29 @@
         <section class="section-middle">
             <div id="section-middle-left">
                 <section class="section-location">
-                    <p class="locations-info">Our Locations</p>
+                    <p id="locations-header-text">Our Locations</p>
+
                     <section class="section-location-hq">
-                        <div class="locations-info"><img id="building-icon" src="./images/Building-icon.svg" alt=""></div>
+                        <img id="building-icon" src="./images/Building-icon.svg" alt="">
                         <div class="locations-info">
-                            <p>Headquarters</p>
+                            <p class="locations-text">Headquarters</p>
                             <div>
-                                <p>1101 Red Ventures Dr</p>
-                                <p>Fort Mill, SC, 29707</p>
+                                <p class="base-text">1101 Red Ventures Dr</p>
+                                <p class="base-text">Fort Mill, SC, 29707</p>
                             </div>
                         </div>
                     </section>
+
                     <section class="section-residences">
-                        <p class="residences-info">Residences</p>
                         <div class="residences-info"><img id="building-icon" src="./images/Strengthening-icon.svg" alt=""></div>
                         <div class="residences-info">
-                            <p>Headquarters</p>
-                            <div>
-                                <p>1101 Red Ventures Dr</p>
-                                <p>Fort Mill, SC, 29707</p>
+                            <p class="locations-text">Residences</p>
+                            <div id="residences-para">
+                                <p class="base-text">Homeward locates 12 permanent housing developments. All of our apartments are reserved for people who are low-income or who have experienced homelessness.</p>
                             </div>
                         </div>
                     </section>
+
                 </section>
             </div>
             <div id="section-middle-right">
@@ -47,34 +48,41 @@
         </section>
         <section class="section-bottom">
             <section class="section-bottom-left">
-                <p>CONTACT US</p>
-                <h3>Get in touch with our team</h2>
+                <p class="contact-para">CONTACT US</p>
+                <h6 class="contact-header-text">Get in touch with our team</h6>
                 <p class="contact-para">Please connect with our main office for general inquiries, questions about employment or housing,
                     or more information about our resources. If you need help, please click here to let us know how we can assist you.
                 </p>
-                <h3>Phone: (343)438-8923</h3>
+                <h3 class="contact-header-text">Phone: (343)438-8923</h3>
             </section>
             <div class="section-form">
                 <form>
                     <section class="section_square-2">
                         <div class="full-name">
-                            <label for="first-name" id="full-name-label">Full Name: </label>
+                            <!-- <label for="first-name" id="full-name-label">Full Name: </label> -->
                             <input type="text" id="first-name" name="first-name" placeholder="First Name" required value="">
                             <input type="text" id="last-name" name="last-name" placeholder="Last Name" required  value="">
                         </div>
                         <div>
-                            <label for="email" class="contact_label">Email:</label>
-                            <input type="email" id="email" name="email" class="section_square2-inputs" placeholder="myname@example.com" required  value="">
+                            <!-- <label for="email" class="contact_label">Email:</label> -->
+                            <input type="email" id="email" name="email" class="section_square2-inputs" placeholder="Email Address" required  value="">
                         </div>
                         <div>
-                            <label for="phone" class="contact_label">Phone:</label>
-                            <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000" class="section_square2-inputs num_field" required  value="">
+                            <!-- <label for="phone" class="contact_label">Phone:</label> -->
+                            <input type="tel" id="phone" name="phone" placeholder="Phone Number" class="section_square2-inputs num_field" required  value="">
                         </div>
                         <div>
-                            <label for="message" class="contact_label">Message:</label>
-                            <input type="text" id="message" name="phone" placeholder="Message Here" class="section_square2-inputs" required  value="">
+                            <!-- <label for="phone" class="contact_label">Phone:</label> -->
+                            <input type="text" name="organization" placeholder="Name of Organization" class="section_square2-inputs num_field" required  value="">
                         </div>
-                        <hr>
+                        <div>
+                            <!-- <label for="message" class="contact_label">Message:</label> -->
+                            <input type="text" id="reason" name="reason" placeholder="Reason for Contact" class="section_square2-inputs" required  value="">
+                        </div>
+                        <div>
+                            <!-- <label for="message" class="contact_label">Message:</label> -->
+                            <input type="text" id="message" name="phone" placeholder="Write your message here" class="section_square2-inputs" required  value="">
+                        </div>
                         <button type="submit" id="second_next" class="button-next">Submit</button>
                     </section>
                 </form>
