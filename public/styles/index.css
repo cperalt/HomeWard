@@ -1,7 +1,7 @@
 html {
   margin: 0;
   padding: 0;
-  background-color: #67729D;
+  width: 100%;
 }
 
 body {
@@ -11,7 +11,45 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  width: 100vw;
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
   width: 100%;
+  z-index: 1;
+  font-size: 1rem;
+  justify-content: space-between;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  /* padding: 0 40px; if volunteer button is deleted*/
+}
+#navbar li {
+  list-style: none;
+  margin: 10px;
+}
+#navbar li a {
+  text-decoration: none;
+  color: white;
+}
+
+#volunteer-btn {
+  margin: 0 50px;
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 150px;
+  background-color: red;
+  font-size: 1rem;
+  color: white;
 }
 
 .hero-image {
@@ -28,11 +66,9 @@ body {
   color: white;
   font-weight: 400;
 }
-
 .hero-image p {
   font-size: 2rem;
 }
-
 .hero-image button {
   background-color: #E7BCDE;
   padding: 0;
@@ -62,7 +98,6 @@ body {
   background-size: cover;
   position: relative;
 }
-
 .tab button {
   background-color: #E7BCDE;
   padding: 0;
@@ -73,7 +108,6 @@ body {
   border-radius: 6px;
   border: solid 1px #67729D;
 }
-
 .tab button:hover {
   cursor: pointer;
 }
@@ -82,190 +116,145 @@ body {
   0% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
   }
-
   1% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
   }
-
   5% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
   }
-
   10% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
   }
-
   15% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
   }
-
   25% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
   }
-
   30% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
   }
-
   40% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
   }
-
   50% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
   }
-
   75% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
   }
-
   100% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
   }
 }
-
 @keyframes highlight-two {
   0% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   1% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   5% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   10% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   15% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   25% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   30% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   40% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   50% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   75% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   100% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
 }
-
 @keyframes highlight-three {
   0% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   1% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   5% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   10% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   15% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   25% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   30% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   40% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   50% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   75% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
-
   100% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   }
 }
-
 @keyframes highlight-four {
   0% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
   }
-
   1% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
   }
-
   5% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
   }
-
   10% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
   }
-
   15% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
   }
-
   25% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
   }
-
   30% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
   }
-
   40% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
   }
-
   50% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
   }
-
   75% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
   }
-
   100% {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
   }
 }
-
 .tab--one {
   background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
 }
-
 .tab--one:hover {
   animation-name: highlight-one;
   animation-duration: 0.25s;
@@ -276,7 +265,6 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   background-position: bottom;
 }
-
 .tab--two:hover {
   animation-name: highlight-two;
   animation-duration: 0.25s;
@@ -287,7 +275,6 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
   background-position: top;
 }
-
 .tab--three:hover {
   animation-name: highlight-three;
   animation-duration: 0.25s;
@@ -297,11 +284,8 @@ body {
 .tab--four {
   background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
 }
-
 .tab--four:hover {
   animation-name: highlight-four;
   animation-duration: 0.25s;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
-}
-
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
