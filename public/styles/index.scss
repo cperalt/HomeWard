@@ -17,6 +17,10 @@ body {
     width: 100vw;
 }
 
+#menu {
+    display: none;
+}
+
 #header {
     display: flex;
     flex-direction: row;
@@ -48,10 +52,66 @@ body {
 }
 
 #volunteer-btn {
+    display: block;
+    text-align: center;
+    align-content: center;
     margin: 0 50px;
     border: solid 1px black;
     border-radius: 5px;
     width: 150px;
+    background-color: red;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+#side-nav {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    width: 500px;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.8));
+    font-size: 2rem;
+}
+
+#side-navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 0;
+
+    li {
+        list-style: none;
+        margin: 20px;
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+#ribbon {
+    display: flex;
+    flex-direction: row-reverse;
+
+    img {
+        margin: 5px;
+    }
+}
+
+#side-volunteer-btn {
+    display: block;
+    text-align: center;
+    align-content: center;
+    border: solid 1px black;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
     background-color: red;
     font-size: 1rem;
     color: white;
@@ -348,5 +408,23 @@ body {
         animation-duration: 0.25s;
         background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
 
+    }
+}
+
+@media screen and (max-width: 920px) {
+    #navbar {
+        display: none;
+    }
+
+    #menu {
+        display: inline;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    #ribbon {
+        cursor: pointer;
     }
 }
