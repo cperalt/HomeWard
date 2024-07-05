@@ -14,7 +14,7 @@ function initMap() {
 }
 
 function searchPlace() {
-	const search = document.getElementById("search").value;
+	const search = document.getElementById("zip").value;
 	const geocoder = new google.maps.Geocoder();
 	geocoder.geocode({
 		address: search
