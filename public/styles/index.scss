@@ -118,14 +118,15 @@ body {
 }
 
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)), url("../images/foodkitchen.jpeg");
-    height: 400px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)), url("../images/heroimgnew.jpg");
+    // height: 400px;
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
@@ -144,6 +145,34 @@ body {
         height: 50px;
         border-radius: 6px;
         border: solid 1px $primary-color;
+    }
+}
+
+.images-container {
+    // background-color: red;
+
+    img {
+        width: 300px;
+    }
+}
+
+.middle-container {
+    background-image: url("../images/Yellow-spackle-wall.jpg");
+    // height: 400px;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .housing-img{
+        width: 100%;
+        // width: 75rem;
+        // height: 37.5rem;
+        height: 42rem;
     }
 }
 

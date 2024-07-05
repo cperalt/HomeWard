@@ -4,12 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/contact.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/shared.css">
     <title>Contact Us</title>
 </head>
 <body>
+    <header id="header">
+        <img width="218" height="48" src="images/h-logo.svg" alt="homeward logo">
+        <img width="40" id="menu" src="images/menu.svg" alt="navigation bar menu button">
+        <ul id="navbar">
+            <li><a href="index.html">ABOUT</a></li>
+            <li><a href="resources.html">GET HELP</a></li>
+            <li><a href="volunteer.html">GET INVOLVED</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <a id="volunteer-btn" href="volunteer.html">VOLUNTEER</a>
+    </header>
+    <nav id="side-nav">
+        <div id="ribbon"><img width="30" src="images/close.svg" alt="close menu button"></div>
+        <ul id="side-navbar">
+            <li><a href="index.html">ABOUT</a></li>
+            <li><a href="resources.html">GET HELP</a></li>
+            <li><a href="volunteer.html">GET INVOLVED</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a id="side-volunteer-btn" href="volunteer.html">VOLUNTEER</a></li>
+        </ul>
+    </nav>
     <main>
         <section class="section-hero">
-            <img src="images/hero-house.jpeg" id="hero-img" alt="Hero image">
+            <img src="images/heroimgnew.jpg" id="hero-img" alt="Hero image">
             <div class="header-brand">
                 <p id="header-text">Contact HomeWard</p>
             </div>
@@ -90,4 +115,5 @@
         </section>
     </main>
 </body>
+<script src="scripts/index.js"></script>
 </html>
