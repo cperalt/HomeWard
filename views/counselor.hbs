@@ -35,7 +35,7 @@
     <div class="placeholder"></div>
     <main class="counselor-container">
         <section class="counselor-section">
-            <form onsubmit="getCounselor()">
+            <form>
                 <input id="zip" type="text" placeholder="ZIP CODE" pattern="[0-9]{5}" 
                     oninvalid="setCustomValidity('Please enter a 5 digit zip code')"
                     oninput="setCustomValidity('')" required/>
@@ -77,6 +77,7 @@
     </main>
 </body>
 <script src="/public/scripts/index.js"></script>
+<script src="/public/scripts/inputhandler.js"></script>
 <script src="/public/scripts/foodbanks.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBgAhCPbNjviOE0NapTIt_5lQxRG3GkSRI
 &map_ids=123014699cdb1245 
