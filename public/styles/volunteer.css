@@ -2,7 +2,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Libre Baskerville", serif;
     font-weight: 400;
     font-style: normal;
   }
@@ -44,7 +43,7 @@
     margin: 50px auto;
     padding: 20px;
     background-color: #ffffff;
-    box-shadow: 0 0 20px rgb(103, 114, 157);
+    box-shadow: 0 0 20px #000000;
     border-radius: 8px;
 }
 
@@ -54,7 +53,7 @@ h1 {
 }
 
 .secondtitle {
-    color: #67729D;
+    color: #E7D37F;
     font-size: 30px;
     text-align: center;
 }
@@ -96,12 +95,14 @@ p {
     border-radius: 4px;
     margin-bottom: 10px;
     margin-top: 13%;
-    border: 1px solid #67729D;
+    border: 1px solid #64a464;
+    box-shadow: 0 0 5px #040604;
+
 }
 
 .volunteer-opportunity h3 {
     margin: 0;
-    color: #BB9CC0;
+    color: #64a464;
     font-size: 20px;
 }
 
@@ -135,7 +136,7 @@ p {
 }
 
 button {
-    background-color: #E7BCDE;
+    background-color: #64a464;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -145,36 +146,39 @@ button {
 }
 
 button:hover {
-    background-color: #BB9CC0;
+    background-color: #E7D37F;
 }
 
 .signup-container {
     max-width: 1100px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #67729D;
+    background-color: #64a464;
     border-radius: 8px;
-    box-shadow: 0 0 100px rgb(103, 114, 157);
+    box-shadow: 0 0 20px #000000;
 }
 
 .impact-stories {
     text-align: center;
     padding-bottom: 3%;
     font-size:30px;
-    color: #67729D;
+    color: #64a464;
 }
 
 .carousel {
     width: 100vw;
     overflow: hidden;
+    padding-bottom: 2%;
+    position: relative;
 }
 
 .wrap {
     display: grid;
+    gap: 70px;
     grid-auto-flow: column;
     grid-auto-columns: 250px;
     justify-items: stretch;
-    animation: slide 45s linear infinite;
+    animation: slide 50s linear infinite;
 }
 
 .wrap img {
@@ -192,7 +196,7 @@ button:hover {
 }
 
 .image-text-wrapper p {
-    font-size: 15px; 
+    font-size: 14px; 
     color: #333; 
     padding-top: 10px; 
     text-align: center;
@@ -203,9 +207,7 @@ button:hover {
 .image-text-wrapper {
     height: 400px;
     background-color: white;
-    box-shadow: 0 0 10px rgb(103, 114, 157);
+    box-shadow: 0 0 10px #040604;
     margin: 0 10px;
     border-radius: 10px;
 }
-
-
