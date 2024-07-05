@@ -22,7 +22,6 @@ justify-content: center;
 }
 
 #hero-heading{
-    font-family: "Libre Baskerville", serif;
     color: whitesmoke;
     position: relative;
     font-size: 5rem;
@@ -42,7 +41,6 @@ justify-content: center;
 
 #mission-heading{
     position: relative;
-    font-family: "Libre Baskerville", serif;
     font-size: 2rem;
     text-align: center;
      font-weight: bold;
@@ -83,7 +81,6 @@ justify-content: center;
     display: flex;
     height: 35rem;
     width: 100vw;
-    /* margin-top: 15rem; */
     box-sizing: border-box;
     margin-bottom: 1rem;
 }
@@ -108,7 +105,6 @@ justify-content: center;
 
 #why-heading{
     position: relative;
-    font-family: "Libre Baskerville", serif;
     font-size: 2rem;
     text-align: center;
      font-weight: bold;
@@ -143,7 +139,6 @@ justify-content: center;
 }
 
 #impact-heading{
-    font-family: "Libre Baskerville", serif;
     color: whitesmoke;
     position: relative;
     font-size: 1.7rem;
@@ -177,7 +172,6 @@ justify-content: center;
 
 .contact h3{
     position: relative;
-    font-family: "Libre Baskerville", serif;
     font-size: 1.4rem;
     text-align: center;
      font-weight: bold;
