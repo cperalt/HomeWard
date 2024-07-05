@@ -24,7 +24,7 @@ async function searchBusRoutes(zipcode) {
 
         // Fetch bus routes based on latitude and longitude
         const apiKey = 'your_transportapi_key'; 
-        const url = //`https://transportapi.com/v3/uk/bus/stops/near.json?lat=${latitude}&lon=${longitude}&app_id=your_app_id&app_key=${apiKey}`;
+        const url = `https://transportapi.com/v3/uk/bus/stops/near.json?lat=${latitude}&lon=${longitude}&app_id=your_app_id&app_key=${apiKey}`;
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error('Failed to fetch bus routes');
