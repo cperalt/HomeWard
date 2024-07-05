@@ -4,13 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/volunteer.css" rel="stylesheet" type="text/css" /><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="styles/shared.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <title>Volunteer</title>
 </head>
 <body>
+    <header id="header">
+        <img width="218" height="48" src="images/homewardlogo.png" alt="homeward logo">
+        <img width="40" id="menu" src="images/menu.svg" alt="navigation bar menu button">
+        <ul id="navbar">
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="resources.html">GET HELP</a></li>
+            <li><a href="volunteer.html">GET INVOLVED</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <a id="volunteer-btn" href="volunteer.html">VOLUNTEER</a>
+    </header>
+    <nav id="side-nav">
+        <div id="ribbon"><img width="30" src="images/close.svg" alt="close menu button"></div>
+        <ul id="side-navbar">
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="resources.html">GET HELP</a></li>
+            <li><a href="volunteer.html">GET INVOLVED</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a id="side-volunteer-btn" href="volunteer.html">VOLUNTEER</a></li>
+        </ul>
+    </nav>
     <div class="volunteer-image">
-        <img src="images/volunteer.png" alt="Volunteer Image">
+        <img src="images/heroimgnew.jpg" alt="Volunteer Image">
       <div class="title">
         <h2>Volunteer</h2>
       </div>
@@ -124,6 +149,35 @@
             </div>
         </div>
     </div>
+    <footer class="footer">
+        <section class="footer-contact">
+            <img src="images/homewardlogo.png" alt="HomeWard Logo">
+        </section>
+        <section class="footer-content">
+            <ul>
+                <li class="footer-content-header">Social</li>
+                <li><a href="https://instagram.com" class="hover-effect">Instagram</a></li>
+                <li><a href="https://twitter.com" class="hover-effect">Twitter</a></li>
+                <li><a href="https://www.facebook.com" class="hover-effect">Facebook</a></li>
+                <li><a href="https://www.youtube.com" class="hover-effect">Youtube</a></li>
+            </ul>
+            <ul>
+                <li class="footer-content-header">Company</li>
+                <li><a href="about.html" class="hover-effect">About</a></li>
+                <li><a href="resources.html" class="hover-effect">Resources</a></li>
+                <li><a href="volunteer.html" class="hover-effect">Volunteer With Us</a></li>
+                <li><a href="contact.html" class="hover-effect">Contact Us</a></li>
+            </ul>
+        </section>
+        <section class="footer-legal">
+            <p>©  2024 HomeWard</p>
+            <ul class="footer-legal-container">
+                <a><li>Privacy Policy</li></a>
+                <a><li>Press Information</li></a>
+                <a><li>Language</li></a>
+            </ul>
+        </section>
+    </footer>
 </body>
-<script src="volunteer.js"></script>
+<script src="scripts/index.js"></script>
 </html>
