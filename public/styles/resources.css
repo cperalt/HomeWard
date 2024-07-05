@@ -9,7 +9,9 @@ main{
 }
 
 .resources{
-    background-image: url('https://img.freepik.com/premium-photo/purple-white-background-painting-light-lavender-gradient-texture-brush-strokes-paper_145343-1533.jpg?w=360');
+    display:flex;
+    flex-direction: column;
+background-color: rgb(26, 167, 122);
     backdrop-filter: blur(20px);
     background-attachment: scroll;
     background-size: cover;
@@ -17,17 +19,21 @@ main{
 }
 
 .bodyWords{
+    margin-top: 3rem;
     text-align: center;
+    color: aliceblue;
 }
 
 
 .data-container {
-    max-width: 900px;
+    align-self: center;
+    max-width: 60rem;
     display: grid;
     margin-top: 2%;
-    margin-left: 10%;
-    margin-right: 10%;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
     gap: 20px;
 }
 
@@ -38,11 +44,8 @@ main{
     border: 1px solid #ccc;
     padding: 8px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     padding-bottom: 10px;
-    width: 50%;
-    
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); 
 }
 
 .center {
