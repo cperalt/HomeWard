@@ -22,10 +22,10 @@ main{
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: rgb(255, 255, 255); /* Change the text color as needed */
-    font-size: 2rem; /* Adjust the font size as needed */
-    padding: 1rem; /* Optional: Add some padding */
-    border-radius: 10px; /* Optional: Add rounded corners */
+    color: rgb(255, 255, 255); 
+    font-size: 2rem; 
+    padding: 1rem; 
+    border-radius: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -50,12 +50,8 @@ main{
 
 .data-container {
     align-self: center;
-    /* width: 100vw; */
-    /* max-width: 60rem; */
     display: grid;
     margin-top: 2%;
-    /* margin-left: 1.5rem; */
-    /* margin-right: 1.5rem; */
     margin-bottom: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
     gap: 20px;
@@ -141,8 +137,11 @@ main{
 
 .ReachOut{
     text-align: center;
-    color: rgb(65, 177, 134);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: url(../images/purp.jpg);
+    height: 15rem;
+    font-size: x-large;
 }
 
 .ReachOut a{
