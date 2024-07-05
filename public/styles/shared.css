@@ -25,7 +25,7 @@ body {
     top: 0;
     left: 0;
     padding: 20px;
-    width: 100%;
+    width: 97%;
     z-index: 1;
     font-size: 1rem;
     justify-content: space-between;
@@ -37,6 +37,13 @@ body {
     margin: 0;
     /* padding: 0 40px; if volunteer button is deleted*/
 }
+
+  /* #header img {
+    padding-right: 10px;
+  }
+   */
+
+
   #navbar li {
     list-style: none;
     margin: 10px;
@@ -50,7 +57,6 @@ body {
     display: block;
     text-align: center;
     align-content: center;
-    margin: 0 50px;
     border: solid 1px black;
     border-radius: 5px;
     width: 150px;
