@@ -3,44 +3,47 @@ let map, infowindow, service;
 function initMap() {
 	map = new google.maps.Map(document.getElementById("map"), {
 		center: {
-			lat: -33.867,
-			lng: 151.195,
-      mapId: '123014699cdb1245'
+			lat: 35.2271,
+			lng: -80.8431,
+			mapId: '123014699cdb1245' 
+
 		},
-		zoom: 15,
+		zoom: 10,
 	});
 	infowindow = new google.maps.InfoWindow();
 	service = new google.maps.places.PlacesService(map);
 }
 
-function searchPlace() {
-	const search = document.getElementById("zip").value;
+function searchFoodBanks() {
+	const zipcode = document.getElementById("zipcode").value;
 	const geocoder = new google.maps.Geocoder();
 	geocoder.geocode({
-		address: search
+		address: zipcode
 	}, (results, status) => {
 		if (status === google.maps.GeocoderStatus.OK) {
 			const userLocation = results[0].geometry.location;
 			map.setCenter(userLocation);
-			map.setZoom(15);
+			map.setZoom(5);
 			const request = {
-				query: "Museum of Contemporary Art Australia",
-				fields: ["name", "geometry"],
-				locationBias: userLocation,
+				location: userLocation,
+				radius: '10',
+				type: ['food_bank'],
 			};
-			service.findPlaceFromQuery(request, (results, status) => {
-				if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+			service.nearbySearch(request, (results, status) => {
+				if (status === google.maps.places.PlacesServiceStatus.OK) {
 					for (let i = 0; i < results.length; i++) {
 						createMarker(results[i]);
+						console.log(results[i].name, results[i].vicinity);4
 					}
-					map.setCenter(results[0].geometry.location);
+				} else {
+					console.error("Places search was not successful for the following reason: " + status);
 				}
 			});
 		} else {
 			console.error("Geocode was not successful for the following reason: " + status);
-			const defaultLocation = new google.maps.LatLng(-33.867, 151.195);
+			const defaultLocation = new google.maps.LatLng(35.2271, -80.8431);
 			map.setCenter(defaultLocation);
-			map.setZoom(15);
+			map.setZoom();
 		}
 	});
 }
@@ -55,4 +58,11 @@ function createMarker(place) {
 		infowindow.setContent(place.name || "");
 		infowindow.open(map, marker);
 	});
+}
+
+
+export default  {
+	initMap,
+	searchFoodBanks,
+	createMarker
 }
