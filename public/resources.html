@@ -6,18 +6,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/styles.css">
+    
+    <link rel="stylesheet" href="./styles/resources.css">
+    <link rel="stylesheet" href="styles/shared.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
+    <header id="header">
+        <img width="218" height="48" src="images/h-logo.svg" alt="homeward logo">
+        <img width="40" id="menu" src="images/menu.svg" alt="navigation bar menu button">
+        <ul id="navbar">
+            <li><a href="index.html">ABOUT</a></li>
+            <li><a href="resources.html">GET HELP</a></li>
+            <li><a href="volunteer.html">GET INVOLVED</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <a id="volunteer-btn" href="volunteer.html">VOLUNTEER</a>
+    </header>
+    <nav id="side-nav">
+        <div id="ribbon"><img width="30" src="images/close.svg" alt="close menu button"></div>
+        <ul id="side-navbar">
+            <li><a href="index.html">ABOUT</a></li>
+            <li><a href="resources.html">GET HELP</a></li>
+            <li><a href="volunteer.html">GET INVOLVED</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a id="side-volunteer-btn" href="volunteer.html">VOLUNTEER</a></li>
+        </ul>
+    </nav>
     <main>
         <section class="resources">
             <div class="bodyWords">
-                <h2>Contact For Help</h2>
-                <p>Finding affordable Housing, food banks, and bus routes to meet your needs</p>
+                <h2>Contact For Assistance</h2>
+                <p>Finding Affordable Housing, Food Banks, and Bus Routes to Meet Your Needs</p>
             </div>
             <div class="data-container">
                 <div class="data-item">
@@ -49,12 +73,12 @@
         </section>
         <section class="ReachOut">
             <div class="wrapper">
-                <h1>Have something else?</h1>
-                <p>If you want to get in touch with the team for any other reason please use the contact page so we can get to you quicly.</p> 
+                <h1>Need Assistance with Something Else?</h1>
+                <p>We’re here to help with any inquiries you may have. If you’d like to get in touch with our team for any reason, please use the contact page. We’ll make sure to respond to you promptly and address your needs.</p> 
                 <a href="#">Contact Us</a> 
             </div>    
         </section>
     </main>
-    <<script src="/scripts/resources.js"></script>
+    <script src="/scripts/resources.js"></script>
     </body>
     </html>
