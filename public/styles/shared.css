@@ -35,14 +35,7 @@ body {
     display: flex;
     flex-direction: row;
     margin: 0;
-    /* padding: 0 40px; if volunteer button is deleted*/
 }
-
-  /* #header img {
-    padding-right: 10px;
-  }
-   */
-
 
   #navbar li {
     list-style: none;
