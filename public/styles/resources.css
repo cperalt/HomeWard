@@ -8,30 +8,54 @@ main{
     padding: 0;
 }
 
+.nav{
+    width: 100vw;
+    height: 24rem;
+    background: url(../images/heroimg.jpeg)no-repeat;
+    background-position: cover;
+     background-size: 100%;
+}
+
+.hero-content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(255, 255, 255); /* Change the text color as needed */
+    font-size: 2rem; /* Adjust the font size as needed */
+    padding: 1rem; /* Optional: Add some padding */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .resources{
-    display:flex;
+    display: flex;
+    width: 100vw;
     flex-direction: column;
-background-color: rgb(26, 167, 122);
-    backdrop-filter: blur(20px);
+    background: url(../images/orange_peel.jpg)no-repeat;
+    background-position: cover;
+    background-size: 100%;
     background-attachment: scroll;
-    background-size: cover;
-    background-repeat: no-repeat;
+    backdrop-filter: blur(5px);
 }
 
 .bodyWords{
     margin-top: 3rem;
     text-align: center;
-    color: aliceblue;
+    color:  rgb(65, 177, 134);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 
 .data-container {
     align-self: center;
-    max-width: 60rem;
+    /* width: 100vw; */
+    /* max-width: 60rem; */
     display: grid;
     margin-top: 2%;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    /* margin-left: 1.5rem; */
+    /* margin-right: 1.5rem; */
     margin-bottom: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
     gap: 20px;
@@ -39,13 +63,14 @@ background-color: rgb(26, 167, 122);
 
 
 .data-item {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    width: 21rem;
     border-radius: 20px;
     border: 1px solid #ccc;
     padding: 8px;
     display: block;
     padding-bottom: 10px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
 .center {
@@ -57,7 +82,7 @@ background-color: rgb(26, 167, 122);
   }
 
 .data-item:hover{
-    background-color: blue;
+    background-color: rgb(65, 177, 134);
 }
 
 
@@ -116,18 +141,24 @@ background-color: rgb(26, 167, 122);
 
 .ReachOut{
     text-align: center;
+    color: rgb(65, 177, 134);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .ReachOut a{
+   color: rgb(65, 177, 134);
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+   font-weight: bolder;
     text-decoration: none;
-    border: 2px solid blue;
+    border: 3px solid  rgb(65, 177, 134);
     width: 100px;
     margin-top: 10px;
     padding: 10px;
+    background-color:rgb(221, 221, 246);
 }
 
 .ReachOut a:hover{
-    background-color: blue;
+    background-color:  rgb(65, 177, 134);
     color: white;
 }
 
