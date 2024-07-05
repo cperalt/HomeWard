@@ -46,7 +46,8 @@
                     <option value="20">20 Miles</option>
                     <option value="50">50 Miles</option>
                 </select>
-                <input id="submit" type="submit" value="Go"/>
+                <input onclick="searchFoodBanks()"" id="zipcode" type="submit" value="Go"/>
+
             </form>
             <hr>
             <p>10 search results:</p>
@@ -74,12 +75,11 @@
         </section>
     </main>
 </body>
-<script src="/public/scripts/index.js"></script>
+<script src="/public/scripts/index.js"></script> 
 <script src="foodbanks.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBgAhCPbNjviOE0NapTIt_5lQxRG3GkSRI
 &map_ids=123014699cdb1245 
 &callback=initMap"></script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgAhCPbNjviOE0NapTIt_5lQxRG3GkSRI&libraries=places&callback=initMap" async defer></script>
   
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgAhCPbNjviOE0NapTIt_5lQxRG3GkSRI&libraries=places&callback=initMap" async defer></script>
 </html>

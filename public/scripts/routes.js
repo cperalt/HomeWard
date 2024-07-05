@@ -2,6 +2,7 @@
 import express from 'express';
 import path from 'path';
 import fetch from 'node-fetch';
+import foodbanks from 'foodbanks.js';
 
 // Initialize Express app
 const app = express();
