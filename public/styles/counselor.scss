@@ -62,7 +62,7 @@ html {
 
         #submit {
             height: auto;
-            background-color: rgb(0, 165, 0);
+            background-color: #539ed1;
             width: 40px;
             border: solid 1px grey;
         }
@@ -76,22 +76,35 @@ html {
 }
 
 .counselor-choice {
-    border: solid 2px black;
+    border: 1px solid #959595;
     padding: 15px;
     margin: 0 0 20px;
+    background-color: #fff;
+
+    h1 {
+        color: #045391;
+    }
+
     .title {
         display: inline;
         margin: 0 5px 0;
-        font-weight: 500;
-        color: blue;
+        font-weight: 700;
+        color: #045391;;
     }
     .title-container{
         display: flex;
         align-items: center;
         
     }
+
+    .desc {
+        color: #045391;
+    }
+
+    .link {
+        color: #045391;
+    }
 }
 
 .counselor-map {
-    background-color: red;
 }

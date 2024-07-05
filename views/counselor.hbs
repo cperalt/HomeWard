@@ -49,30 +49,36 @@
                 <input id="submit" type="submit" value="Go"/>
             </form>
             <hr>
-            <p>10 search results:</p>
+            <p>{{ len }} search results:</p>
             <p><em>Please choose a counselor at your best convencience.</em></p>
+            {{#each this}}
+            {{#if agcid}}
             <section class="counselor-choice">
-                <h1>{{counselorData.0.nme}}</h1>
-                <p>DESCRIPTION</p>
-                <p>MORE DESCRIPTION</p>
+                <h1>{{nme}}</h1>
+                <p class="desc">DESCRIPTION</p>
+                <p class="desc">MORE DESCRIPTION</p>
                 <div class="title-container">
                     <img src="/public/images/pin.svg" alt="Map icon">
                     <p class="title">ADDRESS:</p>
                 </div>
-                <p>{{counselorData.0.adr1}}, {{counselorData.0.mailingcity}}, {{counselorData.0.state_NME}} {{counselorData.0.mailingzipcd}}</p>
+                <p>{{adr1}}, {{mailingcity}}, {{state_NME}} {{mailingzipcd}}</p>
                 <div class="title-container">
                     <img src="/public/images/globe.svg" alt="Globe icon">
                     <p class="title">WEBSITE:</p>
                 </div>
-                <p>{{counselorData.0.weburl}}</p>
+                <a class="link" href="{{weburl}}" target="_blank">{{weburl}}</a>
             </section>
-            
-            
+            {{else}}{{/if}}
+            {{/each}}
         </section>
-        <section class="counselor-map">
+        <section class="counselor-map" id="map">
 
         </section>
     </main>
 </body>
 <script src="/public/scripts/index.js"></script>
+<script src="/public/scripts/foodbanks.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBgAhCPbNjviOE0NapTIt_5lQxRG3GkSRI
+&map_ids=123014699cdb1245 
+&callback=initMap"></script>
 </html>
