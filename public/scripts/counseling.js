@@ -45,8 +45,8 @@ app.get('/public/index.html', (req, res) => res.render('index.html'))
 app.get('/resources/counselor', async (req, res) => {
     const zipcode = req.query.zipcode;
     if (!zipcode) return res.send('Enter a valid zipcode!');
-    // const counselorData = await searchCounseling(28105);
-    const counselorData = [];
+    const counselorData = await searchCounseling(28105);
+    // const counselorData = [];
     console.log(counselorData);
     res.render('counselor', counselorData);
 })
