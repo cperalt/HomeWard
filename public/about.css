@@ -5,7 +5,32 @@ body{
 }
 
 
+.nav{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)), url("./images/heroimgnew.jpg");
+    height: 23rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 400;
+}
 
+.hero-content {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  color: rgb(255, 255, 255); 
+    font-size: 2rem; 
+    padding: 1rem; 
+    border-radius: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
 
 #hero-container{
     top: 7rem ;
@@ -35,6 +60,7 @@ justify-content: center;
     width: 100vw;
     margin-top: 15rem;
     box-sizing: border-box;
+    position: relative;
     /* margin-bottom: rem; */
     
 }
@@ -165,9 +191,9 @@ justify-content: center;
     height: 1.875rem;
     width: 6rem;
     font-weight: bold;
-  
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); 
+    margin-bottom: 5rem;
 }
 
 .contact h3{

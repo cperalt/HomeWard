@@ -13,29 +13,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header id="header">
-        <img width="218" height="48" src="images/h-logo.svg" alt="homeward logo">
-        <img width="40" id="menu" src="images/menu.svg" alt="navigation bar menu button">
-        <ul id="navbar">
-            <li><a href="index.html">ABOUT</a></li>
-            <li><a href="resources.html">GET HELP</a></li>
-            <li><a href="volunteer.html">GET INVOLVED</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-        </ul>
-        <a id="volunteer-btn" href="volunteer.html">VOLUNTEER</a>
-    </header>
-    <nav id="side-nav">
-        <div id="ribbon"><img width="30" src="images/close.svg" alt="close menu button"></div>
-        <ul id="side-navbar">
-            <li><a href="index.html">ABOUT</a></li>
-            <li><a href="resources.html">GET HELP</a></li>
-            <li><a href="volunteer.html">GET INVOLVED</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li><a id="side-volunteer-btn" href="volunteer.html">VOLUNTEER</a></li>
-        </ul>
-    </nav>
+    <div class="nav">
+        <header id="header">
+            <img height="40" src="images/homewardlogo.png" alt="homeward logo">
+            <img width="40" id="menu" src="images/menu.svg" alt="navigation bar menu button">
+            <ul id="navbar">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="resources.html">GET HELP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <a id="volunteer-btn" href="volunteer.html">VOLUNTEER</a>
+        </header>
+        <nav id="side-nav">
+            <div id="ribbon"><img width="30" src="images/close.svg" alt="close menu button"></div>
+            <ul id="side-navbar">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="resources.html">GET HELP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a id="side-volunteer-btn" href="volunteer.html">VOLUNTEER</a></li>
+            </ul>
+        </nav>
+    <div class="hero-content">
+        <h1>About Homeward</h1>
+    </div>
+</div>
     <div id="hero-container">
-        <h1 id="hero-heading">About Homeward</h1>
     </div>
 
 
@@ -74,6 +78,34 @@
    </div>
         
        
-
+   <footer class="footer">
+    <section class="footer-contact">
+        <img src="images/homewardlogo.png" alt="HomeWard Logo">
+    </section>
+    <section class="footer-content">
+        <ul>
+            <li class="footer-content-header">Social</li>
+            <li><a href="https://instagram.com" class="hover-effect">Instagram</a></li>
+            <li><a href="https://twitter.com" class="hover-effect">Twitter</a></li>
+            <li><a href="https://www.facebook.com" class="hover-effect">Facebook</a></li>
+            <li><a href="https://www.youtube.com" class="hover-effect">Youtube</a></li>
+        </ul>
+        <ul>
+            <li class="footer-content-header">Company</li>
+            <li><a href="about.html" class="hover-effect">About</a></li>
+            <li><a href="resources.html" class="hover-effect">Resources</a></li>
+            <li><a href="volunteer.html" class="hover-effect">Volunteer With Us</a></li>
+            <li><a href="contact.html" class="hover-effect">Contact Us</a></li>
+        </ul>
+    </section>
+    <section class="footer-legal">
+        <p>©  2024 HomeWard</p>
+        <ul class="footer-legal-container">
+            <a><li>Privacy Policy</li></a>
+            <a><li>Press Information</li></a>
+            <a><li>Language</li></a>
+        </ul>
+    </section>
+</footer>
 </body>
 </html>
