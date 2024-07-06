@@ -1,70 +1,93 @@
-let map, infowindow, service;
+let map, service, infowindow;
 
 async function initMap() {
-    map = await new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 35.2271, lng: -80.8431 },
-        zoom: 10,
-        mapId: '123014699cdb1245 ' // Replace with your mapId if needed
-    });
-    infowindow = new google.maps.InfoWindow();
-    service = new google.maps.places.PlacesService(map);
+	const gmap = window.google.maps;
 
-    // Listen for changes in the ZIP code input field
-    document.getElementById("zip").addEventListener("input", function() {
+    // Initialize the map
+    map = new gmap.Map(document.getElementById("map"), {
+        center: { lat: 35.2271, lng: -80.8431 }, // Default center (Charlotte, NC)
+        zoom: 12,
+    });
+	
+	console.log({
+		gmap: gmap.places
+	})
+	
+    infowindow = new gmap.InfoWindow();
+
+	console.log({
+		infowindow
+	})
+
+    service = new gmap.places.PlacesService(map);
+    // Listen for form submission
+    document.getElementById("form").addEventListener("submit", function(event) {
+        //event.preventDefault();
         searchFoodBanks();
+
     });
 }
 
-function searchFoodBanks() {
-    const zipcode = document.getElementById("zip").value.trim(); // Trim whitespace
+async function searchFoodBanks() {
+    const zipcode = document.getElementById("zip").value.trim();
+
+
     if (zipcode.length !== 5 || isNaN(zipcode)) {
         console.error("Invalid ZIP code");
         return;
     }
 
-    const geocoder = new google.maps.Geocoder();
-    
-    geocoder.geocode({
-        address: zipcode
-    }, (results, status) => {
-        if (status === google.maps.GeocoderStatus.OK) {
-            const userLocation = results[0].geometry.location;
-            map.setCenter(userLocation);
-            map.setZoom(10); // You can adjust the zoom level here
-            const request = {
-                location: userLocation,
-                radius: 20000, // 20 kilometers (in meters)
-                type: ['food_bank']
-            };
+    try {
+        // Geocode the ZIP code to get coordinates
+        const geocodeResponse = await geocode(zipcode);
+        const userLocation = geocodeResponse.geometry.location;
+
+        // Center map on user's location
+        map.setCenter(userLocation);
+        map.setZoom(12); // Adjust zoom level as needed
+
+        // Define request for nearby food banks
+        const request = {
+            location: userLocation,
+            radius: 20000, // 20 kilometers (in meters)
+            type: 'food_bank'
+        };
+
+        // Perform nearby search
+        const results = await new Promise((resolve, reject) => {
+			console.log({
+				service
+			})
             service.nearbySearch(request, (results, status) => {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    // Clear previous markers
-                    clearMarkers();
-                    // Create markers for each food bank
-                    for (let i = 0; i < results.length; i++) {
-                        createMarker(results[i]);
-                        console.log(results[i].name, results[i].vicinity);
-                    }
+                    resolve(results);
                 } else {
-                    console.error("Places search was not successful for the following reason: " + status);
+                    reject(new Error(`Places search was not successful for the following reason: ${status}`));
                 }
             });
-        } else {
-            console.error("Geocode was not successful for the following reason: " + status);
-            const defaultLocation = new google.maps.LatLng(35.2271, -80.8431);
-            map.setCenter(defaultLocation);
-            map.setZoom(10); // Set default zoom level
-        }
-		console.log("hooray");
-    });
+        });
+
+        // Clear previous markers
+        clearMarkers();
+
+        // Create markers for each food bank
+        results.forEach(place => {
+            createMarker(place);
+        });
+
+    } catch (error) {
+        console.error("Error searching food banks:", error);
+    }
 }
 
 function createMarker(place) {
     if (!place.geometry || !place.geometry.location) return;
+
     const marker = new google.maps.Marker({
         map,
         position: place.geometry.location
     });
+	
     google.maps.event.addListener(marker, "click", () => {
         infowindow.setContent(place.name || "");
         infowindow.open(map, marker);
@@ -72,10 +95,19 @@ function createMarker(place) {
 }
 
 function clearMarkers() {
-    infowindow.close();
-    map.data.forEach(function (feature) {
-        map.data.remove(feature);
-    });
+    infowindow.close(); // Close any open infowindows
+    // Implement clearing of markers here as per your requirements
 }
 
-window.onload = initMap;
+async function geocode(address) {
+    return new Promise((resolve, reject) => {
+        const geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ address: address }, (results, status) => {
+            if (status === google.maps.GeocoderStatus.OK) {
+                resolve(results[0]);
+            } else {
+                reject(new Error(`Geocode was not successful for the following reason: ${status}`));
+            }
+        });
+    });
+}

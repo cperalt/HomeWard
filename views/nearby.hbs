@@ -35,40 +35,30 @@
     <div class="placeholder"></div>
     <main class="counselor-container">
         <section class="counselor-section">
-            <form id="form">
-                <input id="zip" type="text" placeholder="ZIP CODE" pattern="[0-9]{5}" 
+            <form id="form" method="GET">
+                <input id="zip" name="zipcode" type="text" placeholder="ZIP CODE" pattern="[0-9]{5}" 
                     oninvalid="setCustomValidity('Please enter a 5 digit zip code')"
                     oninput="setCustomValidity('')" required/>
-                <select id="radius" placeholder="RADIUS">
+                <select id="radius" name="rad" placeholder="RADIUS">
                     <option value="5">5 Miles</option>
                     <option value="10">10 Miles</option>
                     <option value="15">15 Miles</option>
                     <option value="20" selected>20 Miles</option>
                     <option value="50">50 Miles</option>
                 </select>
-                <input id="submit" type="submit" value="Go"/>
+                <button type="submit" id="submit">Go!</button>
             </form>
             <hr>
-            <p>{{ len }} search results:</p>
+            <p>1,000,000 search results:</p>
             <p><em>Please choose a counselor at your best convencience.</em></p>
-            {{#each this}}
-            {{#if agcid}}
+            {{#each results}}
+            {{!-- {{#if agcid}} --}}
             <section class="counselor-choice">
-                <h1>{{nme}}</h1>
-                <p class="desc">DESCRIPTION</p>
-                <p class="desc">MORE DESCRIPTION</p>
-                <div class="title-container">
-                    <img src="/public/images/pin.svg" alt="Map icon">
-                    <p class="title">ADDRESS:</p>
-                </div>
-                <p>{{adr1}}, {{mailingcity}}, {{state_NME}} {{mailingzipcd}}</p>
-                <div class="title-container">
-                    <img src="/public/images/globe.svg" alt="Globe icon">
-                    <p class="title">WEBSITE:</p>
-                </div>
-                <a class="link" href="{{weburl}}" target="_blank">{{weburl}}</a>
+                {{#if this.icon}}<img src="{{ this.icon }}" aria-hidden />{{/if}}
+                {{#if this.name}} <p>{{ this.name }}</p> {{/if}}
+                {{#if this.vicinity}} <p>{{ this.vicinity }}</p> {{/if}}
             </section>
-            {{else}}{{/if}}
+            {{!-- {{else}}{{/if}} --}}
             {{/each}}
         </section>
         <section id="map"></section>
@@ -76,7 +66,6 @@
 </body>
 <script src="/public/scripts/index.js"></script>
 <script src="/public/scripts/foodbanks.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBgAhCPbNjviOE0NapTIt_5lQxRG3GkSRI
-&map_ids=123014699cdb1245 
-&callback=initMap"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBgAhCPbNjviOE0NapTIt_5lQxRG3GkSRI&libraries=places&map_ids=123014699cdb1245&callback=initMap"></script>
+{{!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=places" defer></script> --}}
 </html>
