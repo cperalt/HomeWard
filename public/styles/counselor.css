@@ -2,7 +2,7 @@ html {
   margin: 0;
   padding: 0;
   width: 100vh;
-  background-color: #abb8c3;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.8));
 }
 
 .placeholder {
@@ -19,8 +19,12 @@ html {
   grid-template-rows: 1fr;
 }
 
+.searchres {
+  color: #fff;
+}
+
 .counselor-section {
-  background-color: #b5c2cf;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), url("../images/heroimgnew.jpg");
   padding: 0 20px;
 }
 .counselor-section form {
@@ -74,20 +78,20 @@ html {
   background-color: #fff;
 }
 .counselor-choice h1 {
-  color: #045391;
+  color: #64a464;
 }
 .counselor-choice .title {
   display: inline;
   margin: 0 5px 0;
   font-weight: 700;
-  color: #045391;
+  color: #64a464;
 }
 .counselor-choice .title-container {
   display: flex;
   align-items: center;
 }
 .counselor-choice .desc {
-  color: #045391;
+  color: #000000;
 }
 .counselor-choice .link {
   color: #045391;

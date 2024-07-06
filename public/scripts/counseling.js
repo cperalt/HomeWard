@@ -47,6 +47,7 @@ app.get('/resources/counselor', async (req, res) => {
     if (!distance) return res.send(`Enter a valid distance!`);
     const counselorData = await searchCounseling(zipcode, distance);
     hbs.registerHelper('len', function(obj) {return Object.keys(counselorData).length - 1});
+    console.log(counselorData)
     res.render('counselor', counselorData);
 })
 
