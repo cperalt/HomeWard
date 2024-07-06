@@ -35,7 +35,7 @@
     <div class="placeholder"></div>
     <main class="counselor-container">
         <section class="counselor-section">
-            <form>
+            <form id="form">
                 <input id="zip" type="text" placeholder="ZIP CODE" pattern="[0-9]{5}" 
                     oninvalid="setCustomValidity('Please enter a 5 digit zip code')"
                     oninput="setCustomValidity('')" required/>
@@ -43,7 +43,7 @@
                     <option value="5">5 Miles</option>
                     <option value="10">10 Miles</option>
                     <option value="15">15 Miles</option>
-                    <option value="20">20 Miles</option>
+                    <option value="20" selected>20 Miles</option>
                     <option value="50">50 Miles</option>
                 </select>
                 <input id="submit" type="submit" value="Go"/>
@@ -71,9 +71,7 @@
             {{else}}{{/if}}
             {{/each}}
         </section>
-        <section class="counselor-map" id="map">
-
-        </section>
+        <section id="map"></section>
     </main>
 </body>
 <script src="/public/scripts/index.js"></script>
