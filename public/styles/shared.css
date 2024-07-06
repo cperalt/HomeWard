@@ -132,7 +132,6 @@ body {
     min-height: 20rem;
     background-color: #64a464;
     padding: 3.2rem;
-    margin-top: 3.2rem;
     justify-content: space-between;
     color: white;
     @media (max-width: 900px) {
