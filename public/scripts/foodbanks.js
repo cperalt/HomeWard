@@ -1,7 +1,9 @@
+
+
 let map, infowindow, service;
 
-function initMap() {
-	map = new google.maps.Map(document.getElementById("map"), {
+async function initMap() {
+	map =  await new google.maps.Map(document.getElementById("map"), {
 		center: {
 			lat: 35.2271,
 			lng: -80.8431,
@@ -15,7 +17,7 @@ function initMap() {
 }
 
 function searchFoodBanks() {
-	const zipcode = document.getElementById("zipcode").value;
+	const zipcode = document.getElementById("zip").value;
 	const geocoder = new google.maps.Geocoder();
 	geocoder.geocode({
 		address: zipcode
@@ -60,9 +62,12 @@ function createMarker(place) {
 	});
 }
 
+window.onload = initMap;
 
-export default  {
-	initMap,
-	searchFoodBanks,
-	createMarker
-}
+console.log(request);
+
+// module.exports =   {
+// 	initMap,
+// 	searchFoodBanks,
+// 	createMarker
+// }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Homeward - Find Food Banks Near You</title>
+        <link rel="stylesheet" href="/public/styles/shared.css" />
+        <link rel="stylesheet" href="/public/styles/counselor.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <header id="header">
+            <img height="40" src="/public/images/homewardlogo.png" alt="homeward logo" /> <img width="40" id="menu" src="/public/images/menu.svg" alt="navigation bar menu button" />
+            <ul id="navbar">
+                <li><a href="index.html">ABOUT</a></li>
+                <li><a href="resources.html">GET HELP</a></li>
+                <li><a href="volunteer.html">GET INVOLVED</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <a id="volunteer-btn" href="volunteer.html">VOLUNTEER</a>
+        </header>
+        <nav id="side-nav">
+            <div id="ribbon"><img width="30" src="/public/images/close.svg" alt="close menu button" /></div>
+            <ul id="side-navbar">
+                <li><a href="index.html">ABOUT</a></li>
+                <li><a href="resources.html">GET HELP</a></li>
+                <li><a href="volunteer.html">GET INVOLVED</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a id="side-volunteer-btn" href="volunteer.html">VOLUNTEER</a></li>
+            </ul>
+        </nav>
+        <main class="counselor-container">
+            <section class="counselor-section">
+                <form>
+                    <input id="zip" type="text" placeholder="ZIP CODE" pattern="[0-9]{5}" oninvalid="setCustomValidity('Please enter a 5 digit zip code')" oninput="setCustomValidity('')" required />
+                    <select id="radius" placeholder="RADIUS">
+                        <option value="5">5 Miles</option>
+                        <option value="10">10 Miles</option>
+                        <option value="15">15 Miles</option>
+                        <option value="20">20 Miles</option>
+                        <option value="50">50 Miles</option>
+                    </select>
+                    <input id="submit" type="submit" value="Go" />
+                </form>
+                <hr />
+                <p><em>10 search results:</em></p>
+                <p><em>Please choose a counselor at your best convenience.</em></p>
+            </section>
+            <section class="counselor-choice">
+                <h1>Food Banks Near ZIP Code</h1>
+                {{#if results.length}}
+                <ul>
+                    {{#each results}}
+                    <li>
+                        <h2>{{name}}</h2>
+                        <p>Address: {{formatted_address}}</p>
+                        <p>Rating: {{rating}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+                {{else}}
+                <p>No food banks found near the provided ZIP code.</p>
+                {{/if}}
+            </section>
+            <section class="counselor-map"><div id="map" style="height: 400px;"></div></section>
+        </main>
+    </body>
+        <script src="/public/scripts/index.js"></script>
+        <script src="/public/scripts/foodbanks.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap" async defer></script>
+</html>
