@@ -26,8 +26,8 @@ const OPTIONS = {
     }
 }
 const connection = await mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
+    host: process.env.DB_HOST || 'localhost',
+    port: process.env.DB_PORT || 3306,
     user: 'root',
     password: 'password',
     database: 'users'
@@ -51,6 +51,29 @@ app.get('/resources/counselor', async (req, res) => {
     hbs.registerHelper('len', function (obj) { return Object.keys(counselorData).length - 1 });
     res.render('counselor', counselorData);
 })
+
+app.get('/searchFoodBanks', async (req, res) => {
+    const {
+        zipcode
+    } = req.query;
+    try {
+        const geocodeResponse = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${zipcode}&key=${apiKey}`);
+        const geocodeData = await geocodeResponse.json();
+
+        if (geocodeData.results.length === 0) {
+            return res.status(404).send('No results found for the provided ZIP code');
+        }
+
+        const location = geocodeData.results[0].geometry.location;
+        const placesResponse = await fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location.lat},${location.lng}&radius=5000&type=food_bank&key=${apiKey}`);
+        const placesData = await placesResponse.json();
+
+        res.render('nearby', { results: placesData.results })
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('An error occurred');
+    }
+});
 
 //CRUD endoipoints
 app.post('/data/volunteer', async (req, res) => {
