@@ -1,36 +1,33 @@
+// Global variables for map, service, infowindow, and markers array
 let map, service, infowindow;
+let markers = [];
 
-async function initMap() {
-	const gmap = window.google.maps;
+// Initialize the map
+function initMap() {
+    const gmap = google.maps;
 
     // Initialize the map
     map = new gmap.Map(document.getElementById("map"), {
-        center: { lat: 35.2271, lng: -80.8431 }, // Default center (Charlotte, NC)
+        center: { lat: 35.2271, lng: -80.8431 },
         zoom: 12,
     });
-	
-	console.log({
-		gmap: gmap.places
-	})
-	
+
+    // Initialize PlacesService and InfoWindow
     infowindow = new gmap.InfoWindow();
-
-	console.log({
-		infowindow
-	})
-
     service = new gmap.places.PlacesService(map);
-    // Listen for form submission
-    document.getElementById("form").addEventListener("submit", function(event) {
-        //event.preventDefault();
-        searchFoodBanks();
 
+    // Attach event listener to form for submission
+    document.getElementById("form").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+
+        // Call searchFoodBanks function to handle form submission
+        searchFoodBanks();
     });
 }
 
+// Function to handle form submission and search for food banks
 async function searchFoodBanks() {
     const zipcode = document.getElementById("zip").value.trim();
-
 
     if (zipcode.length !== 5 || isNaN(zipcode)) {
         console.error("Invalid ZIP code");
@@ -44,7 +41,7 @@ async function searchFoodBanks() {
 
         // Center map on user's location
         map.setCenter(userLocation);
-        map.setZoom(12); // Adjust zoom level as needed
+        map.setZoom(9); // Adjust zoom level as needed
 
         // Define request for nearby food banks
         const request = {
@@ -55,9 +52,6 @@ async function searchFoodBanks() {
 
         // Perform nearby search
         const results = await new Promise((resolve, reject) => {
-			console.log({
-				service
-			})
             service.nearbySearch(request, (results, status) => {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
                     resolve(results);
@@ -75,30 +69,52 @@ async function searchFoodBanks() {
             createMarker(place);
         });
 
+        // Fit map bounds to markers
+        fitMapToBounds();
+
     } catch (error) {
         console.error("Error searching food banks:", error);
     }
 }
 
+// Function to create marker on map
 function createMarker(place) {
     if (!place.geometry || !place.geometry.location) return;
 
     const marker = new google.maps.Marker({
-        map,
+        map: map,
         position: place.geometry.location
     });
-	
+
     google.maps.event.addListener(marker, "click", () => {
         infowindow.setContent(place.name || "");
         infowindow.open(map, marker);
     });
+
+    markers.push(marker); // Push marker to markers array
 }
 
+// Function to clear markers on map
 function clearMarkers() {
+    markers.forEach(marker => {
+        marker.setMap(null); // Remove marker from map
+    });
+    markers = []; // Clear markers array
     infowindow.close(); // Close any open infowindows
-    // Implement clearing of markers here as per your requirements
 }
 
+// Function to fit map bounds to markers
+function fitMapToBounds() {
+    if (markers.length === 0) return;
+
+    const bounds = new google.maps.LatLngBounds();
+    markers.forEach(marker => {
+        bounds.extend(marker.getPosition());
+    });
+    map.fitBounds(bounds);
+}
+
+// Function to geocode address (in this case, ZIP code)
 async function geocode(address) {
     return new Promise((resolve, reject) => {
         const geocoder = new google.maps.Geocoder();
