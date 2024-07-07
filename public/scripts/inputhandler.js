@@ -4,8 +4,8 @@ document.getElementById('form').addEventListener('submit', (e) => {
     const distance = document.getElementById('radius').value;
     console.log(zipcode, distance);
     if (!zipcode) console.error('Invalid zipcode!', error);
-    fetch(`http://localhost:8080/resources/counselor?zipcode=${zipcode}&distance=${distance}`, {method: 'GET', redirect: 'follow'})
-    .then(res => {
-        location.href = res.url;
-    })
+    fetch(`http://localhost:8080/resources/counselor?zipcode=${zipcode}&distance=${distance}`, { method: 'GET', redirect: 'follow' })
+        .then(res => {
+            location.href = res.url;
+        })
 });
