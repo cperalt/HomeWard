@@ -1,6 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
+
 body{
-    margin: 0;
-    padding: 0;
+        box-sizing: border-box;
 }
 
 main{
@@ -18,7 +22,6 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-  
     color: white;
     font-weight: 400;
 }
@@ -44,6 +47,7 @@ main{
     width: 100vw;
     flex-direction: column;
     background-attachment: scroll;
+    padding: 0%;
 }
 
 .bodyWords{
@@ -61,6 +65,7 @@ main{
     margin-bottom: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
     gap: 20px;
+    padding: 0%;
 }
 
 
@@ -180,13 +185,56 @@ main{
 
 
 /* Media queries for responsive design */
-@media (min-width: 600px) {
+
+@media (min-width: 280px) {
+
     .data-container {
+        flex-direction: column;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0;
+   }
+
+   .data-item{
+    padding: 0px;
+   }
+}
+
+
+
+@media (min-width: 600px) {
+
+    * {
+        box-sizing: border-box;
+    }
+    body{
+        overflow-x: hidden;
+    }
+
+    .data-container {
+        flex-direction: column;
         grid-template-columns: repeat(2, 1fr);
+        margin: 0;
+   }
+
+   .data-item{
+    padding: 0px;
    }
 }
 @media (min-width: 900px) {
+    * {
+        box-sizing: border-box;
+    }
+    body{
+        overflow-x: hidden;
+    }
+
     .data-container {
+        flex-direction: column;
         grid-template-columns: repeat(3, 1fr);
+        width: fit-content;
+   }
+
+   .data-item{
+    width: 18rem;
    }
 }

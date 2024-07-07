@@ -2,6 +2,7 @@ body{
     width: 100vw;
     background-color: #f8f9fa;
     font-family: "Libre Baskerville", serif;
+    margin: 0;
 }
 
 
@@ -58,7 +59,7 @@ justify-content: center;
     display: flex;
     height: 30rem;
     width: 100vw;
-    margin-top: 15rem;
+    margin-top: 10rem;
     box-sizing: border-box;
     position: relative;
     /* margin-bottom: rem; */
@@ -66,6 +67,7 @@ justify-content: center;
 }
 
 #mission-heading{
+    color: #234160;
     position: relative;
     font-size: 2rem;
     text-align: center;
@@ -130,6 +132,7 @@ justify-content: center;
 }
 
 #why-heading{
+    color: #234160;
     position: relative;
     font-size: 2rem;
     text-align: center;
@@ -154,7 +157,7 @@ justify-content: center;
 #impact-container{
     display: flex;
 background: url(./images/all-in.jpg) no-repeat center center;
-height: 20rem;
+height: 15rem;
 width: 100vw;
 position: relative;
 background-position:center;
@@ -162,6 +165,40 @@ background-size:cover;
 align-items: center;
 align-content: center;
 justify-content: center;
+}
+
+#stats-container{
+    display: flex;
+background: rgb(184, 149, 5);
+height: 19rem;
+width: 100vw;
+z-index: -1;
+}
+
+.stats-img {
+    width: 18rem; 
+    height: 18rem; 
+    border-radius: 50%;
+    border: 5px solid white; 
+    background-color: white; 
+}
+
+.stats-info {
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+    position: relative;
+    top: -7rem; 
+    width: 100%;
+}
+
+.stat-text{
+    align-self: center;
+    width: 9rem;
+    color: whitesmoke;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: larger;
+    font-weight: bolder;
 }
 
 #impact-heading{
@@ -202,4 +239,221 @@ justify-content: center;
     text-align: center;
      font-weight: bold;
      color: #34495e;
+}
+
+@media(max-width: 430px){
+    html {
+        font-size: 6px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+ body{
+        flex-direction: column;
+        display: flex;
+       height: fit-content;
+       overflow-x: hidden;
+    }
+
+    .mission{
+        height: 160px;
+        margin-top: 6%;
+    }
+
+    #why-img img {
+        height: 100px;
+        width: 150px;
+    }
+
+    #mission-img img {
+        height: 100px;
+        width: 150px;
+        padding-left: 1rem;
+    }
+
+    #mission-img{
+        padding-left: 3%;
+    }
+
+    .mission-text{
+       padding-right: 0%;
+       
+    }
+
+    .why{
+        padding-top: 3.5rem;
+        padding-bottom: 3rem;
+        height: 30rem;
+    }
+
+    .why-text{
+        padding-right: 0;
+        width: 250px;
+        padding-left: 2rem;
+    }
+
+    .why-text p{
+        width: 200px;
+        margin-top: 0;
+    }
+
+    .mission-text p{
+        width: 200px;
+        margin-top: 0;
+    }
+
+    #why-heading{
+        width: 200px;
+    }
+
+    #stats-container{
+        height: 18rem;
+        padding-top: 5rem;
+    }
+
+    .stats-img{
+        width: 60px;
+        height: 60px;
+    }
+
+    .hero-content{
+        top: 17rem;
+    }
+
+    .stats-info {
+        display: flex;
+        justify-content: center;
+        gap: 8rem;
+        position: relative;
+        top: -10rem; 
+        width: 100%;
+    }
+
+    #contact-button{
+        width: 14rem;
+        height: 4rem;
+        font-weight: 80;
+        font-size: 2rem;
+    }
+
+    .footer ul{
+        font-size: 1.3rem; 
+    }
+
+    .footer-contact img{
+        height: 100px;
+        width: 100px;
+    }
+}
+
+
+
+@media(min-width: 768px) and (max-width: 820px){
+    html {
+        font-size: 10px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+ body{
+        flex-direction: column;
+        display: flex;
+       height: fit-content;
+       overflow-x: hidden;
+    }
+
+    .mission{
+        width: 768px;
+        height: 160px;
+        margin-top: 15%;
+        margin-bottom: 10%;
+    }
+
+    #why-img img {
+       margin-left: 2rem;
+        height: 240px;
+        width: 290px;
+    }
+
+    #mission-img img {
+        height: 240px;
+        width: 290px;
+        /* margin-left: 2.7rem; */
+        margin-right: 18rem;
+    }
+
+    #mission-img{
+        padding-left: 1%;
+    }
+
+    .why{
+        padding-top: 4rem;
+        height: 30rem;
+        margin-bottom: 10%;
+    }
+
+    .why-text{
+        width: 500px;
+        margin-left: 5rem;
+        padding-left: 5rem;
+        padding-right: 0;
+    }
+
+    .why-text p{
+        width: 360px;
+        margin-top: 0;
+    }
+
+    .mission-text p{
+        width: 400px;
+        margin-top: 0;
+    }
+
+    #why-heading{
+        width: 300px;
+        margin-left: 5rem;
+    }
+
+    #stats-container{
+        height: 18rem;
+        padding-top: 5rem;
+    }
+
+    .stats-img{
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero-content{
+        top: 17rem;
+    }
+
+    .stats-info {
+        display: flex;
+        justify-content: center;
+        gap: 8rem;
+        position: relative;
+        top: -10rem; 
+        width: 100%;
+    }
+
+    #contact-button{
+        width: 14rem;
+        height: 4rem;
+        font-weight: 80;
+        font-size: 2rem;
+    }
+
+    .footer ul{
+        font-size: 1.3rem; 
+    }
+
+    .footer-contact img{
+        height: 100px;
+        width: 100px;
+    }
 }
