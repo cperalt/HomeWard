@@ -56,6 +56,11 @@ body {
     font-size: 1rem;
     color: white;
     text-decoration: none;
+    transition: transform 0.6s ease;
+}
+
+#volunteer-btn:hover {
+  transform: scale(1.1); 
 }
   
   #side-nav {
@@ -105,6 +110,11 @@ body {
     background-color: red;
     font-size: 1rem;
     color: white;
+    transition: transform 0.6s ease;
+}
+
+#side-volunteer-btn:hover{
+  transform: scale(1.1); 
 }
 
 @media screen and (max-width: 920px) {
@@ -126,9 +136,9 @@ body {
   .footer {
     display: grid;
     gap: 2rem;
-    grid-template-areas: "a b" "c c";
+    grid-template-areas:"mailing-list mailing-list" "a b" "c c";
     grid-template-columns: auto auto;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: auto 1fr auto;
     min-height: 20rem;
     background-color: #64a464;
     padding: 3.2rem;
@@ -168,7 +178,7 @@ body {
     font-family: TTfirs;
     font-weight: unset;
     @media only screen and (min-width: 481px) and (max-width: 1024px)  {
-        /* row-gap: 2rem; */
+        
     }
     @media only screen and (min-width: 1025px){
         font-size: 1.9rem;
@@ -178,7 +188,7 @@ body {
 .footer-contact > p {
     font-family: Silka;
     @media only screen and (min-width: 481px) and (max-width: 1024px)  {
-        /* row-gap: 2rem; */
+       
     }
     @media only screen and (min-width: 1025px){
         font-size: 1.063rem;
@@ -275,3 +285,8 @@ ul > li {
   color: #E7D37F; 
   background-color: transparent !important; 
 }
+
+.hover-effectnav:hover {
+  color: #E7D37F !important; 
+}
+
