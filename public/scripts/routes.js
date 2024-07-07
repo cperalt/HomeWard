@@ -139,8 +139,8 @@ app.get('/searchFoodBanks', async (req, res) => {
 });
 
 
-app.get('/directionService', async (req,res) => {
-})
+// app.get('/directionService', async (req,res) => {
+// })
 
 app.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}`);
