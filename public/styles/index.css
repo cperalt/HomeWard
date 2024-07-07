@@ -143,6 +143,7 @@ body {
 }
 .hero-image .headline {
   width: 800px;
+  font-size: 2rem;
 }
 
 #pics-grid {
@@ -158,12 +159,26 @@ body {
   background-size: cover;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .middle-container .housing-img {
   width: 100%;
   height: 42rem;
+}
+.middle-container .message-theme {
+  background-color: #f2f8f2;
+  text-align: center;
+  width: 70%;
+  font-size: 4rem;
+  position: absolute;
+  bottom: -5%;
+  border-radius: 5%;
+}
+.middle-container .message-theme h4 {
+  margin: 2rem;
+  padding: 0;
 }
 
 .tabs {
@@ -198,184 +213,6 @@ body {
   cursor: pointer;
 }
 
-@keyframes highlight-one {
-  0% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
-  }
-  1% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
-  }
-  5% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
-  }
-  10% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
-  }
-  15% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
-  }
-  25% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
-  }
-  30% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
-  }
-  40% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
-  }
-  50% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
-  }
-  75% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
-  }
-  100% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
-  }
-}
-@keyframes highlight-two {
-  0% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  1% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  5% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  10% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  15% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  25% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  30% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  40% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  50% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  75% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  100% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-}
-@keyframes highlight-three {
-  0% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  1% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  5% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  10% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  15% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  25% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  30% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  40% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  50% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  75% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-  100% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  }
-}
-@keyframes highlight-four {
-  0% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
-  }
-  1% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
-  }
-  5% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
-  }
-  10% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
-  }
-  15% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
-  }
-  25% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
-  }
-  30% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
-  }
-  40% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
-  }
-  50% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
-  }
-  75% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
-  }
-  100% {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
-  }
-}
-.tab--one {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
-}
-.tab--one:hover {
-  animation-name: highlight-one;
-  animation-duration: 0.25s;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/handshake.jpg");
-}
-
-.tab--two {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  background-position: bottom;
-}
-.tab--two:hover {
-  animation-name: highlight-two;
-  animation-duration: 0.25s;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-}
-
-.tab--three {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-  background-position: top;
-}
-.tab--three:hover {
-  animation-name: highlight-three;
-  animation-duration: 0.25s;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/classroom.jpg");
-}
-
-.tab--four {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
-}
-.tab--four:hover {
-  animation-name: highlight-four;
-  animation-duration: 0.25s;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url("../images/convo.jpg");
-}
-
 @media screen and (max-width: 920px) {
   #navbar {
     display: none;
@@ -404,7 +241,6 @@ body {
   background-size: cover;
   width: 100%;
   height: 100%;
-  border-radius: 1.5rem;
   padding-bottom: 2rem;
 }
 @media only screen and (min-width: 1025px) {
@@ -414,7 +250,6 @@ body {
     width: 100%;
     height: 50rem;
     padding: 2rem;
-    border-radius: 2rem;
   }
 }
 
@@ -469,7 +304,7 @@ body {
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.0784313725);
   border-radius: 18px;
   position: relative;
-  background-color: white;
+  background-color: #f2f8f2;
   display: flex;
   flex-direction: column;
   justify-content: center;
