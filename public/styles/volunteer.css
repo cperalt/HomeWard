@@ -216,3 +216,65 @@ button:hover {
     margin: 0 10px;
     border-radius: 10px;
 }
+
+/* Existing CSS */
+
+/* Add Media Queries */
+@media (max-width: 1024px) {
+    /* Adjustments for medium-sized screens */
+    .navbar, #side-navbar {
+        flex-direction: column;
+    }
+    
+    .volunteer-opportunities {
+        flex-direction: column;
+    }
+    
+    .volunteer-opportunity {
+        width: 100%;
+    }
+    
+    .signup-container, .container {
+        max-width: 90%;
+    }
+    
+    .carousel {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar, #side-navbar {
+        padding: 10px;
+    }
+    
+    .volunteer-opportunity img {
+        max-width: 100%;
+    }
+    
+    .signup-container, .container {
+        padding: 10px;
+    }
+    
+    .carousel {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar, #side-navbar {
+        padding: 5px;
+    }
+    
+    .volunteer-opportunity img {
+        max-width: 100%;
+    }
+    
+    .signup-container, .container {
+        padding: 5px;
+    }
+    
+    .carousel {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}

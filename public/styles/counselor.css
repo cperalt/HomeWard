@@ -95,4 +95,26 @@ html {
 }
 .counselor-choice .link {
   color: #045391;
+}
+
+@media (max-width: 1024px) {
+  .counselor-container {
+    grid-template-columns: 1fr;
+  }
+  .counselor-section form {
+    flex-direction: column;
+  }
+  .counselor-section form input,
+  .counselor-section form select {
+    margin-bottom: 20px;
+  }
+  .counselor-choice {
+    padding: 10px;
+  }
+  .title-container {
+    flex-direction: column;
+  }
+  .footer-content ul {
+    margin-bottom: 20px;
+  }
 }/*# sourceMappingURL=counselor.css.map */
