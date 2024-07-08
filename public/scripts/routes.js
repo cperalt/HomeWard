@@ -99,6 +99,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import express from 'express';
+import hbs from 'hbs';
 import fetch from 'node-fetch';
 const app = express();
 app.set('view engine', 'hbs');
@@ -113,6 +114,10 @@ const apiKey = 'AIzaSyBgAhCPbNjviOE0NapTIt_5lQxRG3GkSRI';
 //middleware to parese the json data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.get('/', (req, res) => {
+    res.render('nearby'); 
+});
 
 
 app.get('/searchFoodBanks', async (req, res) => {
@@ -135,12 +140,12 @@ app.get('/searchFoodBanks', async (req, res) => {
             throw new Error('Failed to fetch nearby food banks');
         }
         const placesData = await placesResponse.json();
+        placesData.results.shift();
+        console.log('Places data:', placesData.results[0]);
 
         // Render the 'nearby' page with data
-        res.render('nearby', {
-            apiKey: 'AIzaSyBgAhCPbNjviOE0NapTIt_5lQxRG3GkSRI',
-            places: placesData.results
-        });
+        hbs.registerHelper('len', function(obj) {return Object.keys(placesData.results).length - 1});
+        res.render('nearby', placesData);
     } catch (error) {
         console.error(error);
         res.status(500).send('Error fetching data');

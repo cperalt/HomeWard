@@ -21,7 +21,20 @@ function initMap() {
         event.preventDefault();
         searchFoodBanks();
     });
-}
+
+
+// 	document.getElementById('form').addEventListener('submit', (e) => {
+// 		e.preventDefault();
+// 		const zipcode = document.getElementById('zip').value;
+// 		console.log(zipcode);
+// 		if (!zipcode) console.error('Invalid zipcode!', error);
+// 		fetch(`http://localhost:8080/searchFoodBanks?zipcode=${zipcode}`, { method: 'GET', redirect: 'follow' })
+// 			.then(res => {
+// 				location.href = res.url;
+// 			})
+// 	});
+// }
+
 
 // Function to handle form submission and search for food banks
 async function searchFoodBanks() {
@@ -45,7 +58,7 @@ async function searchFoodBanks() {
         const request = {
             location: userLocation,
             radius: 20000, // 20 kilometers (in meters)
-            query: "food bank" // Default query for food banks
+            query: "food distribution center" // Default query for food banks
         };
 
 
@@ -55,13 +68,13 @@ async function searchFoodBanks() {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
 
 
-				console.log(results);
                 // Clear previous markers
                 clearMarkers();
 
                 // Create markers for each food bank
                 results.forEach(place => {
                     createMarker(place);
+					
                 });
 
                 // Fit map bounds to markers
@@ -125,4 +138,5 @@ async function geocode(address) {
             }
         });
     });
+}
 }
