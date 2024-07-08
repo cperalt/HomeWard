@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -18,7 +22,7 @@ body {
 }
 
 #volunteer-btn {
-  display: block;
+  display: none;
   text-align: center;
   align-content: center;
   margin: 0 50px;
@@ -29,6 +33,11 @@ body {
   font-size: 1rem;
   color: white;
   text-decoration: none;
+}
+@media only screen and (min-width: 920px) {
+  #volunteer-btn {
+    display: block;
+  }
 }
 
 #side-nav {
@@ -75,7 +84,7 @@ body {
   border-radius: 5px;
   width: 150px;
   height: 50px;
-  background-color: red;
+  background-color: #1A428A;
   font-size: 1rem;
   color: white;
 }
@@ -239,10 +248,18 @@ body {
   }
   #menu {
     display: inline;
+    margin-right: 4rem;
   }
   #menu:hover {
     cursor: pointer;
   }
+}
+@media only screen and (max-width: 920px) and (min-width: 920px) {
+  #menu {
+    margin: unset;
+  }
+}
+@media screen and (max-width: 920px) {
   #ribbon {
     cursor: pointer;
   }
