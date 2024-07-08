@@ -16,15 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 8080;
-const apiKey = 'AIzaSyBgAhCPbNjviOE0NapTIt_5lQxRG3GkSRI';
-const TOKEN = '';
-const OPTIONS = {
-    method: 'GET',
-    headers: {
-        accept: 'application/json',
-        Authorization: `Bearer ${TOKEN}`
-    }
-}
+const apiKey = process.env.API_KEY || 'AIzaSyBgAhCPbNjviOE0NapTIt_5lQxRG3GkSRI';
+
 const connection = await mysql.createConnection({
     host: process.env.DB_HOST || 'localhost',
     port: process.env.DB_PORT || 3306,
@@ -35,7 +28,6 @@ const connection = await mysql.createConnection({
 
 //Static pages
 app.get('/', (req, res) => res.redirect('/public/index.html'));
-// app.get('/index.html', (req, res) => res.render('../public/index.html'));
 app.get('/public/index.html', (req, res) => res.render('../public/index.html'));
 app.get('/public/about.html', (req, res) => res.render('../public/about.html'));
 app.get('/public/resources.html', (req, res) => res.render('../public/resources.html'));
@@ -45,11 +37,17 @@ app.get('/public/volunteer.html', (req, res) => res.render('../public/volunteer.
 //Dynamic pages
 app.get('/resources/counselor', async (req, res) => {
     const { zipcode, distance } = req.query;
-    if (!zipcode) return res.send(`Enter a valid zipcode!`);
-    if (!distance) return res.send(`Enter a valid distance!`);
-    const counselorData = await searchCounseling(zipcode, distance);
-    hbs.registerHelper('len', function (obj) { return Object.keys(counselorData).length - 1 });
-    res.render('counselor', counselorData);
+    if (!zipcode) {
+        const counselorData = [];
+        hbs.registerHelper('len', function (obj) { return 0 });
+        return res.render('counselor', counselorData);
+    }
+    else if (!distance) return res.send(`Enter a valid distance!`);
+    else {
+        const counselorData = await searchCounseling(zipcode, distance);
+        hbs.registerHelper('len', function (obj) { return Object.keys(counselorData).length - 1 });
+        res.render('counselor', counselorData);
+    }
 })
 
 app.get('/searchFoodBanks', async (req, res) => {
@@ -80,6 +78,7 @@ app.post('/data/volunteer', async (req, res) => {
     const { name, email, phone } = req.body;
     try {
         connection.execute(`INSERT INTO mailing_list (first_name, last_name, email, phone, isVolunteer) values (?, null, ?, ?, true);`, [name, email, phone]);
+        res.redirect('../public/volunteer.html');
     } catch (err) {
         console.error('Error inserting data into database', err);
         res.status(500).send('Error sending data');
@@ -90,6 +89,7 @@ app.post('/data/contact', (req, res) => {
     const { 'first-name': firstName, 'last-name': lastName, email, phone } = req.body;
     try {
         connection.execute('INSERT INTO mailing_list (first_name, last_name, email, phone, isVolunteer) values (?, ?, ?, ?, false)', [firstName, lastName, email, phone]);
+        res.redirect('/public/contact.html');
     } catch (err) {
         console.error('Error inserting data into database', err);
         res.status(500).send('Error sending data');

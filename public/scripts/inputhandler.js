@@ -4,13 +4,13 @@ document.getElementById('form').addEventListener('submit', (e) => {
     const distance = document.getElementById('radius').value;
     console.log(zipcode, distance);
     if (!zipcode) console.error('Invalid zipcode!', error);
-    fetch(`http://localhost:8080/resources/counselor?zipcode=${zipcode}&distance=${distance}`, { method: 'GET', redirect: 'follow' })
+    fetch(`https://homeward-relu.onrender.com/resources/counselor?zipcode=${zipcode}&distance=${distance}`, { method: 'GET', redirect: 'follow' })
         .then(res => {
             location.href = res.url;
         })
 });
 
-// Global variables for map, service, infowindow, and markers array
+/// Global variables for map, service, infowindow, and markers array
 let map, service, infowindow;
 let markers = [];
 
@@ -29,12 +29,12 @@ function initMap() {
     service = new gmap.places.PlacesService(map);
 
     // Attach event listener to form for submission
-    document.getElementById("form").addEventListener("submit", function (event) {
-        event.preventDefault();
+    // document.getElementById("form").addEventListener("submit", function (event) {
+    //     event.preventDefault();
 
-        // Call searchFoodBanks function to handle form submission
-        searchFoodBanks();
-    });
+    //     // Call searchFoodBanks function to handle form submission
+    searchFoodBanks();
+    // });
 }
 
 // Function to handle form submission and search for food banks
@@ -59,7 +59,7 @@ async function searchFoodBanks() {
         const request = {
             location: userLocation,
             radius: 20000, // 20 kilometers (in meters)
-            type: 'food_bank'
+            type: 'food_pantry'
         };
 
         // Perform nearby search
@@ -139,3 +139,5 @@ async function geocode(address) {
         });
     });
 }
+
+window.initMap = initMap();

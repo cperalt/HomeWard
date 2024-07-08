@@ -2,7 +2,6 @@ html {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden;
 }
 
 body {
@@ -12,39 +11,10 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  width: 100vw;
 }
 
 #menu {
   display: none;
-}
-
-#header {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 20px;
-  width: 100%;
-  z-index: 1;
-  font-size: 1rem;
-  justify-content: space-between;
-}
-
-#navbar {
-  display: flex;
-  flex-direction: row;
-  margin: 0;
-  /* padding: 0 40px; if volunteer button is deleted*/
-}
-#navbar li {
-  list-style: none;
-  margin: 10px;
-}
-#navbar li a {
-  text-decoration: none;
-  color: white;
 }
 
 #volunteer-btn {
@@ -55,7 +25,7 @@ body {
   border: solid 1px black;
   border-radius: 5px;
   width: 150px;
-  background-color: red;
+  background-color: #1A428A;
   font-size: 1rem;
   color: white;
   text-decoration: none;
@@ -117,12 +87,12 @@ body {
 
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)), url("../images/heroimgnew.jpg");
-  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   color: white;
@@ -130,25 +100,69 @@ body {
 }
 .hero-image p {
   font-size: 2rem;
+  text-align: center;
+}
+@media only screen and (min-width: 1025px) {
+  .hero-image p {
+    width: 800px;
+    text-align: unset;
+  }
+}
+.hero-image .button-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (min-width: 1025px) {
+  .hero-image .button-section {
+    display: unset;
+  }
 }
 .hero-image button {
-  background-color: #E7BCDE;
+  background-color: #A4C8FF;
   padding: 0;
   margin: 10px 0;
-  color: white;
   width: 140px;
   height: 50px;
   border-radius: 6px;
   border: solid 1px #67729D;
+  align-items: center;
 }
 .hero-image .headline {
-  width: 800px;
   font-size: 2rem;
+  font-family: "Libre Franklin", sans-serif;
+}
+@media only screen and (min-width: 1025px) {
+  .hero-image .headline {
+    width: 800px;
+  }
+}
+@media only screen and (min-width: 1311px) {
+  .hero-image {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    height: 100vh;
+  }
+}
+
+#headline-top-para {
+  margin-top: 10rem;
+}
+@media only screen and (min-width: 1400px) {
+  #headline-top-para {
+    margin-top: 0;
+  }
 }
 
 #pics-grid {
-  width: 500px;
   border-radius: 10%;
+  width: 75%;
+}
+@media only screen and (min-width: 1025px) {
+  #pics-grid {
+    width: 500px;
+  }
 }
 
 .middle-container {
@@ -168,13 +182,19 @@ body {
   height: 42rem;
 }
 .middle-container .message-theme {
+  font-family: "Libre Franklin", sans-serif;
   background-color: #f2f8f2;
   text-align: center;
   width: 70%;
-  font-size: 4rem;
+  font-size: 2rem;
   position: absolute;
   bottom: -5%;
   border-radius: 5%;
+}
+@media only screen and (min-width: 1025px) {
+  .middle-container .message-theme {
+    font-size: 4rem;
+  }
 }
 .middle-container .message-theme h4 {
   margin: 2rem;
@@ -200,7 +220,7 @@ body {
   position: relative;
 }
 .tab button {
-  background-color: #E7BCDE;
+  background-color: #A4C8FF;
   padding: 0;
   margin: 10px 0;
   color: white;
@@ -243,7 +263,7 @@ body {
   height: 100%;
   padding-bottom: 2rem;
 }
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1400px) {
   .first-section {
     display: flex;
     flex-direction: column;
@@ -255,14 +275,15 @@ body {
 
 .first-section-para {
   margin-top: 3.5rem;
-  margin-left: 1rem;
   color: white;
+  text-align: center;
 }
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 1025px) {
   .first-section-para {
     width: 34rem;
     margin-left: 4rem;
     margin-top: 5.5rem;
+    text-align: unset;
   }
 }
 
@@ -272,7 +293,6 @@ body {
 
 .section-statement {
   font-size: 1.6rem;
-  font-family: TTFirs;
 }
 @media only screen and (min-width: 481px) {
   .section-statement {
@@ -286,6 +306,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 3rem;
+  flex-wrap: wrap;
   /* @media (min-width: 1026px) {
       flex-direction: column;
   } */
