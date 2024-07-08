@@ -67,7 +67,7 @@ async function searchFoodBanks() {
         service.textSearch(request, (results, status) => {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
 
-
+				//console.log(results);
                 // Clear previous markers
                 clearMarkers();
 

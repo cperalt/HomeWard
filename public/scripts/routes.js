@@ -140,12 +140,12 @@ app.get('/searchFoodBanks', async (req, res) => {
             throw new Error('Failed to fetch nearby food banks');
         }
         const placesData = await placesResponse.json();
-        placesData.results.shift();
-        console.log('Places data:', placesData.results[0]);
 
         // Render the 'nearby' page with data
-        hbs.registerHelper('len', function(obj) {return Object.keys(placesData.results).length - 1});
-        res.render('nearby', placesData);
+        //hbs.registerHelper('len', function(obj) {return Object.keys(placesData).length - 1});
+
+        console.log('Places data:', placesData);
+        res.render('nearby', placesData.results);
     } catch (error) {
         console.error(error);
         res.status(500).send('Error fetching data');
