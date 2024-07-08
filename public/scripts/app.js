@@ -28,7 +28,6 @@ const connection = await mysql.createConnection({
 
 //Static pages
 app.get('/', (req, res) => res.redirect('/public/index.html'));
-// app.get('/index.html', (req, res) => res.render('../public/index.html'));
 app.get('/public/index.html', (req, res) => res.render('../public/index.html'));
 app.get('/public/about.html', (req, res) => res.render('../public/about.html'));
 app.get('/public/resources.html', (req, res) => res.render('../public/resources.html'));
@@ -36,7 +35,6 @@ app.get('/public/contact.html', (req, res) => res.render('../public/contact.html
 app.get('/public/volunteer.html', (req, res) => res.render('../public/volunteer.html'));
 
 //Dynamic pages
-
 app.get('/resources/counselor', async (req, res) => {
     const { zipcode, distance } = req.query;
     if (!zipcode) {
@@ -51,8 +49,6 @@ app.get('/resources/counselor', async (req, res) => {
         res.render('counselor', counselorData);
     }
 })
-
-
 
 app.get('/searchFoodBanks', async (req, res) => {
     const {
