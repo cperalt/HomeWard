@@ -1,4 +1,3 @@
-
 // Global variables for map, service, infowindow, and markers array
 let map, service, infowindow;
 let markers = [];
@@ -18,12 +17,10 @@ function initMap() {
     service = new gmap.places.PlacesService(map);
 
     // Attach event listener to form for submission
-    // document.getElementById("form").addEventListener("submit", function (event) {
-    //     event.preventDefault();
-
-    //     // Call searchFoodBanks function to handle form submission
-    searchFoodBanks();
-    // });
+    document.getElementById("form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        searchFoodBanks();
+    });
 }
 
 // Function to handle form submission and search for food banks
@@ -42,36 +39,37 @@ async function searchFoodBanks() {
 
         // Center map on user's location
         map.setCenter(userLocation);
-        map.setZoom(9); // Adjust zoom level as needed
+        map.setZoom(12); // Adjust zoom level as needed
 
         // Define request for nearby food banks
         const request = {
             location: userLocation,
             radius: 20000, // 20 kilometers (in meters)
-            type: 'food_pantry'
+            query: "food bank" // Default query for food banks
         };
 
+
+
         // Perform nearby search
-        const results = await new Promise((resolve, reject) => {
-            service.nearbySearch(request, (results, status) => {
-                if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    resolve(results);
-                } else {
-                    reject(new Error(`Places search was not successful for the following reason: ${status}`));
-                }
-            });
+        service.textSearch(request, (results, status) => {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+
+
+				console.log(results);
+                // Clear previous markers
+                clearMarkers();
+
+                // Create markers for each food bank
+                results.forEach(place => {
+                    createMarker(place);
+                });
+
+                // Fit map bounds to markers
+                fitMapToBounds();
+            } else {
+                console.error(`Places search was not successful for the following reason: ${status}`);
+            }
         });
-
-        // Clear previous markers
-        clearMarkers();
-
-        // Create markers for each food bank
-        results.forEach(place => {
-            createMarker(place);
-        });
-
-        // Fit map bounds to markers
-        fitMapToBounds();
 
     } catch (error) {
         console.error("Error searching food banks:", error);
@@ -128,5 +126,3 @@ async function geocode(address) {
         });
     });
 }
-
-window.initMap = initMap();

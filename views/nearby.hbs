@@ -54,18 +54,18 @@
             <hr>
             <p class="search-results-title">20 search results:</p>
             <p class="instructions"><em>Please choose a Food Bank at your best convenience.</em></p>
-
-            {{#each results}}
-            {{!-- {{#if agcid}} --}}
-            <section class="counselor-choice" >
-                {{#if this.icon}}<img src="{{ this.icon }}" aria-hidden />{{/if}}
-                {{#if this.name}} <p>{{ this.name }}</p> {{/if}}
-                {{#if this.vicinity}} <p>{{ this.vicinity }}</p> {{/if}}
-            </section>
-            {{!-- {{else}}{{/if}} --}}
-            {{/each}}
+    <div id="sidebar">
+        {{#each places}}
+            <div class="place">
+                <h2>{{name}}</h2>
+                <p>{{formatted_address}}</p>
+                <p>Rating: {{rating}}</p>
+                <p>Open Now: {{#if open_now}}Yes{{else}}No{{/if}}</p>
+            </div>
+        {{/each}}
+    </div>
         </section>
-        <section id="map"></section>
+        <section id="map" style="width: 100%; height: 60vh;"section>
     </main>
         <footer class="footer">
         <section class="footer-contact">

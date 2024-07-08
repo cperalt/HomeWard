@@ -116,27 +116,37 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.get('/searchFoodBanks', async (req, res) => {
-	const {
-		zipcode
-	} = req.query;
-	try {
-		const geocodeResponse = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${zipcode}&key=${apiKey}`);
-		const geocodeData = await geocodeResponse.json();
-		
-        if (geocodeData.results.length === 0) {
-			return res.status(404).send('No results found for the provided ZIP code');
-		}
-		
-        const location = geocodeData.results[0].geometry.location;
-		const placesResponse = await fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location.lat},${location.lng}&radius=5000&type=food_bank&key=${apiKey}`);
-		const placesData = await placesResponse.json();
+    const { zipcode } = req.query;
 
-        res.render('nearby', {results: placesData.results})
-	} catch (error) {
-		console.error(error);
-		res.status(500).send('An error occurred');
-	}
+    try {
+        // Fetch geocode data for the provided ZIP code
+        const geocodeResponse = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${zipcode}&key=${apiKey}`);
+        if (!geocodeResponse.ok) {
+            throw new Error('Failed to fetch geocode data');
+        }
+        const geocodeData = await geocodeResponse.json();
+
+        // Extract location coordinates
+        const location = geocodeData.results[0].geometry.location;
+
+        // Fetch nearby food banks using Places API
+        const placesResponse = await fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location.lat},${location.lng}&radius=5000&type=food_bank&key=${apiKey}`);
+        if (!placesResponse.ok) {
+            throw new Error('Failed to fetch nearby food banks');
+        }
+        const placesData = await placesResponse.json();
+
+        // Render the 'nearby' page with data
+        res.render('nearby', {
+            apiKey: 'AIzaSyBgAhCPbNjviOE0NapTIt_5lQxRG3GkSRI',
+            places: placesData.results
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error fetching data');
+    }
 });
+
 
 
 
