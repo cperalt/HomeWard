@@ -39,7 +39,7 @@ app.get('/resources/counselor', async (req, res) => {
     const { zipcode, distance } = req.query;
     if (!zipcode) {
         const counselorData = [];
-        hbs.registerHelper('len', function (obj) { return 0});
+        hbs.registerHelper('len', function (obj) { return 0 });
         return res.render('counselor', counselorData);
     }
     else if (!distance) return res.send(`Enter a valid distance!`);
@@ -78,6 +78,7 @@ app.post('/data/volunteer', async (req, res) => {
     const { name, email, phone } = req.body;
     try {
         connection.execute(`INSERT INTO mailing_list (first_name, last_name, email, phone, isVolunteer) values (?, null, ?, ?, true);`, [name, email, phone]);
+        res.render('../public/volunteer.html');
     } catch (err) {
         console.error('Error inserting data into database', err);
         res.status(500).send('Error sending data');
@@ -88,6 +89,7 @@ app.post('/data/contact', (req, res) => {
     const { 'first-name': firstName, 'last-name': lastName, email, phone } = req.body;
     try {
         connection.execute('INSERT INTO mailing_list (first_name, last_name, email, phone, isVolunteer) values (?, ?, ?, ?, false)', [firstName, lastName, email, phone]);
+        res.render('/public/contact.html');
     } catch (err) {
         console.error('Error inserting data into database', err);
         res.status(500).send('Error sending data');
