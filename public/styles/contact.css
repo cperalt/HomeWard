@@ -65,6 +65,7 @@ html {
     text-align: center;
     font-family: TTFirs;
     color: white;
+    font-family: "libre franklin", sans-serif;
 
     @media only screen and (min-width: 481px) {
        font-size: 4.9rem; 
@@ -82,6 +83,7 @@ html {
     /* align-items: space-between; */
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .section-location {
@@ -150,6 +152,7 @@ html {
     justify-content: space-around;
     background-image: url('../images/Green-concrete-wall.jpg');
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .button-next {
