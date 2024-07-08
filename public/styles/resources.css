@@ -100,7 +100,7 @@ main{
     background-color: transparent;
     width: 100%;
     height: 100%;
-    perspective: 1000px;
+    perspective: 1000px; /* perspective property is used to give the card a 3d effect making the effect more realistic*/
 }
 
 .flip-card-inner {
@@ -108,12 +108,12 @@ main{
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+    transition: transform .8s; /* allows us to set the duration for the transition*/
+    transform-style: preserve-3d; /* this keeps our front and back on top of each other because as the transition occurs they arent't moving position*/ 
 }
 
 .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* we're rotating the element around the y-axis when it's hovered over which is what reveals the back*/
 }
 
 .flip-card-front, .flip-card-back {
@@ -135,7 +135,7 @@ main{
 .flip-card-back {
     background-color: rgb(65, 177, 134); 
     color: white;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* this css property is used to hide the back*/
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -70,7 +70,7 @@ justify-content: center;
     font-size: 1.125rem;
     margin-bottom: 1.5rem;
     color: #34495e;
-    line-height: 2; 
+    line-height: 3; 
     text-align: center;
 }
 
@@ -78,7 +78,7 @@ justify-content: center;
     font-size: 1.125rem;
     margin-bottom: 1.5rem;
     color: #34495e;
-    line-height: 2; 
+    line-height: 3; 
     text-align: center;
 }
 
@@ -126,13 +126,14 @@ justify-content: center;
     width: 500px;
     height: auto;
     display: block;
+    border-radius: 1rem90;
 
 }
 
 
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Libre Franklin", sans-serif;
     line-height: 1.6;
 }
 
@@ -227,113 +228,7 @@ z-index: -1;
      font-weight: bold;
      color: #34495e;
 }
-/* 
-@media(max-width: 430px){
-    html {
-        font-size: 6px;
-    }
 
-    * {
-        box-sizing: border-box;
-    }
-
- body{
-        flex-direction: column;
-        display: flex;
-       height: fit-content;
-       overflow-x: hidden;
-    }
-
-    .mission{
-        height: 160px;
-        margin-top: 6%;
-    }
-
-    #why-img img {
-        height: 100px;
-        width: 150px;
-    }
-
-    #mission-img img {
-        height: 100px;
-        width: 150px;
-        padding-left: 1rem;
-    }
-
-    #mission-img{
-        padding-left: 3%;
-    }
-
-    .mission-text{
-       padding-right: 0%;
-       
-    }
-
-    .why{
-        padding-top: 3.5rem;
-        padding-bottom: 3rem;
-        height: 30rem;
-    }
-
-    .why-text{
-        padding-right: 0;
-        width: 250px;
-        padding-left: 2rem;
-    }
-
-    .why-text p{
-        width: 200px;
-        margin-top: 0;
-    }
-
-    .mission-text p{
-        width: 200px;
-        margin-top: 0;
-    }
-
-    #why-heading{
-        width: 200px;
-    }
-
-    #stats-container{
-        height: 18rem;
-        padding-top: 5rem;
-    }
-
-    .stats-img{
-        width: 60px;
-        height: 60px;
-    }
-
-    .hero-content{
-        top: 17rem;
-    }
-
-    .stats-info {
-        display: flex;
-        justify-content: center;
-        gap: 8rem;
-        position: relative;
-        top: -10rem; 
-        width: 100%;
-    }
-
-    #contact-button{
-        width: 14rem;
-        height: 4rem;
-        font-weight: 80;
-        font-size: 2rem;
-    }
-
-    .footer ul{
-        font-size: 1.3rem; 
-    }
-
-    .footer-contact img{
-        height: 100px;
-        width: 100px;
-    }
-} */
 
 @media(max-width: 430px){
 .stat-item{
