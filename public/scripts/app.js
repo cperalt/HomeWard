@@ -15,8 +15,9 @@ app.use(express.static(root));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+const PORT = process.env.PORT || 8080;
+const apiKey = 'AIzaSyBgAhCPbNjviOE0NapTIt_5lQxRG3GkSRI';
 const TOKEN = '';
-const PORT = 8080;
 const OPTIONS = {
     method: 'GET',
     headers: {
@@ -25,17 +26,17 @@ const OPTIONS = {
     }
 }
 const connection = await mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'password',
-    database: 'users'
+    host: process.env.DB_HOST || 'localhost',
+    port: process.env.DB_PORT || 3306,
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASS || 'password',
+    database: process.env.DB_DATABASE || 'users'
 })
 
 //Static pages
-app.get('/', (req, res) => res.render('../public/index.html'));
-app.get('/index.html', (req, res) => res.render('../public/index.html'));
-app.get('/public/index.html', (req, res) => res.render('index.html'));
+app.get('/', (req, res) => res.redirect('/public/index.html'));
+// app.get('/index.html', (req, res) => res.render('../public/index.html'));
+app.get('/public/index.html', (req, res) => res.render('../public/index.html'));
 app.get('/public/about.html', (req, res) => res.render('../public/about.html'));
 app.get('/public/resources.html', (req, res) => res.render('../public/resources.html'));
 app.get('/public/contact.html', (req, res) => res.render('../public/contact.html'));
@@ -47,15 +48,38 @@ app.get('/resources/counselor', async (req, res) => {
     if (!zipcode) return res.send(`Enter a valid zipcode!`);
     if (!distance) return res.send(`Enter a valid distance!`);
     const counselorData = await searchCounseling(zipcode, distance);
-    hbs.registerHelper('len', function(obj) {return Object.keys(counselorData).length - 1});
+    hbs.registerHelper('len', function (obj) { return Object.keys(counselorData).length - 1 });
     res.render('counselor', counselorData);
 })
+
+app.get('/searchFoodBanks', async (req, res) => {
+    const {
+        zipcode
+    } = req.query;
+    try {
+        const geocodeResponse = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${zipcode}&key=${apiKey}`);
+        const geocodeData = await geocodeResponse.json();
+
+        if (geocodeData.results.length === 0) {
+            return res.status(404).send('No results found for the provided ZIP code');
+        }
+
+        const location = geocodeData.results[0].geometry.location;
+        const placesResponse = await fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location.lat},${location.lng}&radius=5000&type=food_bank&key=${apiKey}`);
+        const placesData = await placesResponse.json();
+
+        res.render('nearby', { results: placesData.results })
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('An error occurred');
+    }
+});
 
 //CRUD endoipoints
 app.post('/data/volunteer', async (req, res) => {
     const { name, email, phone } = req.body;
     try {
-        connection.execute(`INSERT INTO mailing_list (first_name, last_name, email, phone, isVolunteer) values (?, null, ?, ?, true);`, [ name, email, phone ]);
+        connection.execute(`INSERT INTO mailing_list (first_name, last_name, email, phone, isVolunteer) values (?, null, ?, ?, true);`, [name, email, phone]);
     } catch (err) {
         console.error('Error inserting data into database', err);
         res.status(500).send('Error sending data');
@@ -65,7 +89,7 @@ app.post('/data/volunteer', async (req, res) => {
 app.post('/data/contact', (req, res) => {
     const { 'first-name': firstName, 'last-name': lastName, email, phone } = req.body;
     try {
-        connection.execute('INSERT INTO mailing_list (first_name, last_name, email, phone, isVolunteer) values (?, ?, ?, ?, false)', [ firstName, lastName, email, phone ]);
+        connection.execute('INSERT INTO mailing_list (first_name, last_name, email, phone, isVolunteer) values (?, ?, ?, ?, false)', [firstName, lastName, email, phone]);
     } catch (err) {
         console.error('Error inserting data into database', err);
         res.status(500).send('Error sending data');

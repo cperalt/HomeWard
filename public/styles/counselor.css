@@ -63,8 +63,9 @@ html {
 .counselor-section form #submit {
   height: auto;
   background-color: #539ed1;
-  width: 40px;
+  width: 60px;
   border: solid 1px grey;
+  text-align: center;
 }
 .counselor-section hr {
   width: 80%;
@@ -95,4 +96,40 @@ html {
 }
 .counselor-choice .link {
   color: #045391;
+}
+
+p:nth-child(2) {
+  font-weight: 700;
+  color: #64a464;
+  font-size: 20px;
+}
+
+.search-results-title {
+  color: white;
+}
+
+.instructions em {
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .counselor-container {
+    grid-template-columns: 1fr;
+  }
+  .counselor-section form {
+    flex-direction: column;
+  }
+  .counselor-section form input,
+  .counselor-section form select {
+    margin-bottom: 20px;
+  }
+  .counselor-choice {
+    padding: 10px;
+  }
+  .title-container {
+    flex-direction: column;
+  }
+  .footer-content ul {
+    margin-bottom: 20px;
+  }
 }/*# sourceMappingURL=counselor.css.map */

@@ -141,17 +141,18 @@ p {
 }
 
 button {
-    background-color: #64a464;
+    background-color: #e3b915;
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     align-content: center;
+    
 }
 
 button:hover {
-    background-color: #E7D37F;
+    background-color: #979797;
 }
 
 .signup-container {
@@ -215,4 +216,62 @@ button:hover {
     box-shadow: 0 0 10px #040604;
     margin: 0 10px;
     border-radius: 10px;
+}
+
+@media (max-width: 1024px) {
+    .navbar, #side-navbar {
+        flex-direction: column;
+    }
+    
+    .volunteer-opportunities {
+        flex-direction: column;
+    }
+    
+    .volunteer-opportunity {
+        width: 100%;
+    }
+    
+    .signup-container, .container {
+        max-width: 90%;
+    }
+    
+    .carousel {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar, #side-navbar {
+        padding: 10px;
+    }
+    
+    .volunteer-opportunity img {
+        max-width: 100%;
+    }
+    
+    .signup-container, .container {
+        padding: 10px;
+    }
+    
+    .carousel {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar, #side-navbar {
+        padding: 5px;
+    }
+    
+    .volunteer-opportunity img {
+        max-width: 100%;
+    }
+    
+    .signup-container, .container {
+        padding: 5px;
+    }
+    
+    .carousel {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
 }
