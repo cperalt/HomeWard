@@ -74,7 +74,7 @@ app.get('/searchFoodBanks', async (req, res) => {
 });
 
 //CRUD endoipoints
-app.post('/data/volunteer', async (req, res) => {
+app.post('/data/volunteer', (req, res) => {
     const { name, email, phone } = req.body;
     try {
         connection.execute(`INSERT INTO mailing_list (first_name, last_name, email, phone, isVolunteer) values (?, null, ?, ?, true);`, [name, email, phone]);
