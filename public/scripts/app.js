@@ -34,9 +34,9 @@ const connection = await mysql.createConnection({
 })
 
 //Static pages
-app.get('/', (req, res) => res.render('../public/index.html'));
-app.get('/index.html', (req, res) => res.render('../public/index.html'));
-app.get('/public/index.html', (req, res) => res.render('index.html'));
+app.get('/', (req, res) => res.redirect('/public/index.html'));
+// app.get('/index.html', (req, res) => res.render('../public/index.html'));
+app.get('/public/index.html', (req, res) => res.render('../public/index.html'));
 app.get('/public/about.html', (req, res) => res.render('../public/about.html'));
 app.get('/public/resources.html', (req, res) => res.render('../public/resources.html'));
 app.get('/public/contact.html', (req, res) => res.render('../public/contact.html'));
