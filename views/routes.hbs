@@ -1,25 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bus Routes - {{ title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+   <link rel="stylesheet" href="/public/styles/shared.css">
+    <link rel="stylesheet" href="/public/styles/counselor.css">
+    <title>HomeWard</title>
 </head>
 <body>
-    <form action="/api/search" method="GET">
-        <label for="zipcode">Enter ZIP Code:</label>
-        <input type="text" id="zipcode" name="zipcode" placeholder="Enter ZIP code">
-        <br>
-        <button type="submit">Search</button>
-    </form>
-
-    <div id="busRoutes">
-        <h2>Bus Routes</h2>
-        <ul>
-            {{#each busRoutes }}
-                <li>{{ name }} - {{ locality }}</li>
-            {{/each}}
+    <header id="header">
+        <img height="40" src="/public/images/homewardlogo.png" alt="homeward logo">
+        <img width="40" id="menu" src="/public/images/menu.svg" alt="navigation bar menu button">
+        <ul id="navbar">
+            <li><a href="index.html" class="hover-effectnav">HOME</a></li>
+            <li><a href="resources.html" class="hover-effectnav">GET HELP</a></li>
+            <li><a href="about.html" class="hover-effectnav">ABOUT</a></li>
+            <li><a href="contact.html" class="hover-effectnav">CONTACT</a></li>
         </ul>
+        <a id="volunteer-btn" href="volunteer.html" >VOLUNTEER</a>
+    </header>
+    <nav id="side-nav">
+        <div id="ribbon"><img width="30" src="/public/images/close.svg" alt="close menu button"></div>
+        <ul id="side-navbar">
+            <li><a href="index.html" class="hover-effectnav">HOME</a></li>
+            <li><a href="resources.html" class="hover-effectnav">GET HELP</a></li>
+            <li><a href="about.html" class="hover-effectnav">ABOUT</a></li>
+            <li><a href="contact.html" class="hover-effectnav">CONTACT</a></li>
+            <li><a id="side-volunteer-btn" href="volunteer.html">VOLUNTEER</a></li>
+        </ul>
+    </nav>
+    <div class="placeholder"></div>
+    <main class="counselor-container">
+        <section class="counselor-section">
+            <form id="form" method="get">
+                <input id="zip" name="zipcode" type="text" placeholder="ZIP CODE" pattern="[0-9]{5}" 
+                    oninvalid="setCustomValidity('Please enter a 5 digit zip code')"
+                    oninput="setCustomValidity('')" required/>
+                <select id="radius" name="rad" placeholder="RADIUS">
+                    <option value="5">5 Miles</option>
+                    <option value="10">10 Miles</option>
+                    <option value="15">15 Miles</option>
+                    <option value="20" selected>20 Miles</option>
+                    <option value="50">50 Miles</option>
+                </select>
+                <input type="submit" id="submit" />
+            </form>
+            <hr>
+            <p class="search-results-title">20 search results:</p>
+            <p class="instructions"><em>Please choose a Food Bank at your best convenience.</em></p>
+    <div id="sidebar">
+        {{#each places}}
+            <div class="place">
+                <h2>{{name}}</h2>
+                <p>{{formatted_address}}</p>
+                <p>Rating: {{rating}}</p>
+                <p>Open Now: {{#if open_now}}Yes{{else}}No{{/if}}</p>
+            </div>
+        {{/each}}
     </div>
+        </section>
+        <section id="map" style="width: 100%; height: 60vh;"section>
+    </main>
+        <footer class="footer">
+        <section class="footer-contact">
+            <img src="/public/images/homewardlogo.png" alt="HomeWard Logo">
+        </section>
+        <section class="footer-content">
+            <ul>
+                <li class="footer-content-header">Social</li>
+                <li><a href="https://instagram.com" class="hover-effect">Instagram</a></li>
+                <li><a href="https://twitter.com" class="hover-effect">Twitter</a></li>
+                <li><a href="https://www.facebook.com" class="hover-effect">Facebook</a></li>
+                <li><a href="https://www.youtube.com" class="hover-effect">Youtube</a></li>
+            </ul>
+            <ul>
+                <li class="footer-content-header">Company</li>
+                <li><a href="about.html" class="hover-effect">About</a></li>
+                <li><a href="resources.html" class="hover-effect">Resources</a></li>
+                <li><a href="volunteer.html" class="hover-effect">Volunteer With Us</a></li>
+                <li><a href="contact.html" class="hover-effect">Contact Us</a></li>
+            </ul>
+        </section>
+        <section class="footer-legal">
+            <p>© 2024 HomeWard</p>
+            <ul class="footer-legal-container">
+                <a>
+                    <li>Privacy Policy</li>
+                </a>
+                <a>
+                    <li>Press Information</li>
+                </a>
+                <a>
+                    <li>Language</li>
+                </a>
+            </ul>
+        </section>
+    </footer>
 </body>
+<script src="/public/scripts/index.js"></script>
+<script src="/public/scripts/foodbanks.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBgAhCPbNjviOE0NapTIt_5lQxRG3GkSRI&libraries=places&map_ids=123014699cdb1245&callback=initMap"></script>
+{{!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=places" defer></script> --}}
 </html>
