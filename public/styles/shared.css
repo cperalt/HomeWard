@@ -17,6 +17,21 @@ body {
 #menu {
   display: none;
 }
+<<<<<<< HEAD
+  
+  #volunteer-btn {
+    display: block;
+    text-align: center;
+    align-content: center;
+    border: solid 1px black;
+    border-radius: 5px;
+    width: 150px;
+    background-color: #1A428A;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.6s ease;
+=======
 
 #header {
   display: flex;
@@ -63,6 +78,7 @@ body {
   color: white;
   text-decoration: none;
   transition: transform 0.6s ease;
+>>>>>>> main
 }
 
 #volunteer-btn:hover {
@@ -180,6 +196,15 @@ body {
     margin-top: 1rem;
   }
 }
+<<<<<<< HEAD
+.footer-contact > h2 {
+    line-height: 1.2;
+    font-size: 1.2rem;
+    font-weight: unset;
+    @media only screen and (min-width: 481px) {
+        font-size: 1.9rem;
+    }
+=======
 
 .footer-contact>h2 {
   line-height: 1.2;
@@ -190,6 +215,7 @@ body {
   @media only screen and (min-width: 481px) {
     font-size: 1.9rem;
   }
+>>>>>>> main
 }
 
 .footer-contact>h3 {
