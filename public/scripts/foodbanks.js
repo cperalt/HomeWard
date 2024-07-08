@@ -18,12 +18,12 @@ function initMap() {
     service = new gmap.places.PlacesService(map);
 
     // Attach event listener to form for submission
-    // document.getElementById("form").addEventListener("submit", function (event) {
-    //     event.preventDefault();
+    document.getElementById("form").addEventListener("submit", function (event) {
+        event.preventDefault();
 
     //     // Call searchFoodBanks function to handle form submission
     searchFoodBanks();
-    // });
+    });
 }
 
 // Function to handle form submission and search for food banks
