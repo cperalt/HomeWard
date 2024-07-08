@@ -1,130 +1,74 @@
-// // Global variables for map, service, infowindow, and markers array
 // let map, service, infowindow;
-// let markers = [];
 
-// // Initialize the map
-// function initMap() {
-//     const gmap = google.maps;
-
-//     // Initialize the map
-//     map = new gmap.Map(document.getElementById("map"), {
-//         center: { lat: 35.2271, lng: -80.8431 },
-//         zoom: 12,
-//     });
-
-//     // Initialize PlacesService and InfoWindow
-//     infowindow = new gmap.InfoWindow();
-//     service = new gmap.places.PlacesService(map);
-
-//     // Attach event listener to form for submission
-//     document.getElementById("form").addEventListener("submit", function (event) {
-//         event.preventDefault();
-//         searchBusStops();
-//     });
-// }
-
-// // Function to handle form submission and search for food banks
-// async function searchBusStops() {
-//     const zipcode = document.getElementById("zip").value.trim();
-
-//     if (zipcode.length !== 5 || isNaN(zipcode)) {
-//         console.error("Invalid ZIP code");
-//         return;
-//     }
-
-//     try {
-//         // Geocode the ZIP code to get coordinates
-//         const geocodeResponse = await geocode(zipcode);
-//         const userLocation = geocodeResponse.geometry.location;
-
-//         // Center map on user's location
-//         map.setCenter(userLocation);
-//         map.setZoom(12); // Adjust zoom level as needed
-
-//         // Define request for nearby food banks
-//         const request = {
-//             location: userLocation,
-//             radius: 20000, // 20 kilometers (in meters)
-//             query: "bus stop" // Default query for food banks
-//         };
-
-
-
-//         // Perform nearby search
-//         service.textSearch(request, (results, status) => {
-//             if (status === google.maps.places.PlacesServiceStatus.OK) {
-
-
-// 				console.log(results);
-//                 // Clear previous markers
-//                 clearMarkers();
-
-//                 // Create markers for each food bank
-//                 results.forEach(place => {
-//                     createMarker(place);
-//                 });
-
-//                 // Fit map bounds to markers
-//                 fitMapToBounds();
-//             } else {
-//                 console.error(`Places search was not successful for the following reason: ${status}`);
-//             }
-//         });
-
-//     } catch (error) {
-//         console.error("Error searching food banks:", error);
-//     }
-// }
-
-// // Function to create marker on map
-// function createMarker(place) {
-//     if (!place.geometry || !place.geometry.location) return;
-
-//     const marker = new google.maps.Marker({
-//         map: map,
-//         position: place.geometry.location
-//     });
-
-//     google.maps.event.addListener(marker, "click", () => {
-//         infowindow.setContent(place.name || "");
-//         infowindow.open(map, marker);
-//     });
-
-//     markers.push(marker); // Push marker to markers array
-// }
-
-// // Function to clear markers on map
-// function clearMarkers() {
-//     markers.forEach(marker => {
-//         marker.setMap(null); // Remove marker from map
-//     });
-//     markers = []; // Clear markers array
-//     infowindow.close(); // Close any open infowindows
-// }
-
-// // Function to fit map bounds to markers
-// function fitMapToBounds() {
-//     if (markers.length === 0) return;
-
-//     const bounds = new google.maps.LatLngBounds();
-//     markers.forEach(marker => {
-//         bounds.extend(marker.getPosition());
-//     });
-//     map.fitBounds(bounds);
-// }
-
-// // Function to geocode address (in this case, ZIP code)
-// async function geocode(address) {
-//     return new Promise((resolve, reject) => {
-//         const geocoder = new google.maps.Geocoder();
-//         geocoder.geocode({ address: address }, (results, status) => {
-//             if (status === google.maps.GeocoderStatus.OK) {
-//                 resolve(results[0]);
-//             } else {
-//                 reject(new Error(`Geocode was not successful for the following reason: ${status}`));
-//             }
-//         });
-//     });
-// }
-
-
+// function initAutocomplete() {
+// 	const map = new google.maps.Map(document.getElementById("map"), {
+// 	  center: { lat: -33.8688, lng: 151.2195 },
+// 	  zoom: 13,
+// 	  //mapTypeId: "roadmap",
+// 	});
+// 	// Create the search box and link it to the UI element.
+//    const input = document.getElementById("zip");
+// 	const searchBox = new google.maps.places.SearchBox(input);
+	
+// 	map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+// 	// Bias the SearchBox results towards current map's viewport.
+// 	map.addListener("bounds_changed", () => {
+// 	  searchBox.setBounds(map.getBounds());
+// 	});
+	
+// 	let markers = [];
+	
+// 	// Listen for the event fired when the user selects a prediction and retrieve
+// 	// more details for that place.
+// 	searchBox.addListener("places_changed", () => {
+// 	  const places = searchBox.getPlaces();
+// 	  console.log(places, "places");
+	
+// 	  if (places.length == 0) {
+// 		return;
+// 	  }
+	
+// 	  // Clear out the old markers.
+// 	  markers.forEach((marker) => {
+// 		marker.setMap(null);
+// 	  });
+// 	  markers = [];
+	
+// 	  // For each place, get the icon, name and location.
+// 	  const bounds = new google.maps.LatLngBounds();
+	
+// 	  places.forEach((place) => {
+// 		if (!place.geometry || !place.geometry.location) {
+// 		  console.log("Returned place contains no geometry");
+// 		  return;
+// 		}
+	
+// 		const icon = {
+// 		  url: place.icon,
+// 		  size: new google.maps.Size(71, 71),
+// 		  origin: new google.maps.Point(0, 0),
+// 		  anchor: new google.maps.Point(17, 34),
+// 		  scaledSize: new google.maps.Size(25, 25),
+// 		};
+	
+// 		// Create a marker for each place.
+// 		markers.push(
+// 		  new google.maps.Marker({
+// 			map,
+// 			icon,
+// 			title: place.name,
+// 			position: place.geometry.location,
+// 		  }),
+// 		);
+// 		if (place.geometry.viewport) {
+// 		  // Only geocodes have viewport.
+// 		  bounds.union(place.geometry.viewport);
+// 		} else {
+// 		  bounds.extend(place.geometry.location);
+// 		}
+// 	  });
+// 	  map.fitBounds(bounds);
+// 	});
+// 	}
+  
+//   window.initAutocomplete = initAutocomplete;
