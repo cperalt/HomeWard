@@ -64,8 +64,9 @@ html {
 .counselor-section form #submit {
   height: auto;
   background-color: #539ed1;
-  width: 40px;
+  width: 60px;
   border: solid 1px grey;
+  text-align: center;
 }
 .counselor-section hr {
   width: 80%;
@@ -96,6 +97,20 @@ html {
 }
 .counselor-choice .link {
   color: #045391;
+}
+
+p:nth-child(2) {
+  font-weight: 700;
+  color: #64a464;
+  font-size: 20px;
+}
+
+.search-results-title {
+  color: white;
+}
+
+.instructions em {
+  color: white;
 }
 
 @media (max-width: 1024px) {

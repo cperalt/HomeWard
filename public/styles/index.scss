@@ -1,12 +1,16 @@
 $primary-color: #67729D;
-$secondary-color: #E7BCDE;
+$secondary-color: #A4C8FF;
 
 html {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden;
+    // overflow-x: hidden;
 }
+
+// #header {
+//     padding: 20px ;
+// }
 
 body {
     margin: 0;
@@ -15,42 +19,13 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    width: 100vw;
+    // width: 100vw;
 }
 
 #menu {
     display: none;
 }
 
-#header {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 20px;
-    width: 100%;
-    z-index: 1;
-    font-size: 1rem;
-    justify-content: space-between;
-}
-
-#navbar {
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    /* padding: 0 40px; if volunteer button is deleted*/
-
-    li {
-        list-style: none;
-        margin: 10px;
-
-        a {
-            text-decoration: none;
-            color: white;
-        }
-    }
-}
 
 #volunteer-btn {
     display: block;
@@ -60,7 +35,7 @@ body {
     border: solid 1px black;
     border-radius: 5px;
     width: 150px;
-    background-color: red;
+    background-color: #1A428A;
     font-size: 1rem;
     color: white;
     text-decoration: none;
@@ -126,13 +101,13 @@ body {
 .hero-image {
     background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)), url("../images/heroimgnew.jpg");
     // height: 400px;
-    height: 100vh;
+    // height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     display: flex;
-    // flex-direction: column;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     color: white;
@@ -140,29 +115,79 @@ body {
 
     p {
         font-size: 2rem;
+        text-align: center;
+
+        @media only screen and (min-width: 1025px) {
+            width: 800px;
+            text-align: unset;
+
+        }
+    }
+
+    .button-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media only screen and (min-width: 1025px) {
+            display: unset;
+
+        }
     }
 
     button {
         background-color: $secondary-color;
         padding: 0;
         margin: 10px 0;
-        color: white;
+        // color: white;
         width: 140px;
         height: 50px;
         border-radius: 6px;
         border: solid 1px $primary-color;
+        // text-align: center;
+        align-items: center;
+
     }
 
     .headline {
-        width: 800px;
         font-size: 2rem;
+        font-family: "Libre Franklin", sans-serif;
+
+        @media only screen and (min-width: 1025px) {
+            width: 800px;
+
+        }
     }
+
+    @media only screen and (min-width: 1311px) {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        height: 100vh;
+
+
+    }
+}
+
+#headline-top-para {
+        margin-top: 10rem;
+
+    @media only screen and (min-width: 1400px) {
+        margin-top: 0;
+
+    }
+    
 }
 
 
 #pics-grid {
-    width: 500px;
     border-radius: 10%;
+    width: 75%;
+
+    @media only screen and (min-width: 1025px) {
+        width: 500px;
+
+    }
 }
 
 .middle-container {
@@ -186,18 +211,26 @@ body {
     }
 
     .message-theme {
+        font-family: "Libre Franklin", sans-serif;
         background-color: #f2f8f2;
+        // background-color: white;
         // background-color: #73a48e;
         text-align: center;
         width: 70%;
-        font-size: 4rem;
+        font-size: 2rem;
         position: absolute;
         bottom: -5%;
         border-radius: 5%;
 
+        @media only screen and (min-width: 1025px) {
+            font-size: 4rem;
+
+        }
+
         h4 {
             margin: 2rem;
             padding: 0;
+
         }
     }
 }
@@ -275,7 +308,7 @@ body {
     // border-radius: 1.5rem;
     padding-bottom: 2rem;
 
-    @media only screen and (min-width: 1025px) {
+    @media only screen and (min-width: 1400px) {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -287,13 +320,15 @@ body {
 
 .first-section-para {
     margin-top: 3.5rem;
-    margin-left: 1rem;
+    // margin-left: 1rem;
     color: white;
+    text-align: center;
 
-    @media only screen and (min-width: 481px) {
+    @media only screen and (min-width: 1025px) {
         width: 34rem;
         margin-left: 4rem;
         margin-top: 5.5rem;
+        text-align: unset;
         
     }
 }
@@ -304,7 +339,6 @@ body {
 
 .section-statement {
     font-size: 1.6rem;
-    font-family: TTFirs;
 
     @media only screen and (min-width: 481px) {
         font-size: 2rem;
@@ -318,6 +352,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: 3rem;
+    flex-wrap: wrap;
 
 
     @media only screen and (min-width: 1025px) {
@@ -334,6 +369,7 @@ body {
 }
 
 .card {
+    // font-family: "Libre Franklin", sans-serif;
     width: 22.5rem;
     height: 28.125rem;
     box-shadow: 4px 4px 12px #00000014;
