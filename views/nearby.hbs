@@ -13,26 +13,25 @@
     <link rel="stylesheet" href="/public/styles/counselor.css">
     <title>HomeWard</title>
 </head>
-
 <body>
     <header id="header">
-        <img height="40" src="images/homewardlogo.png" alt="homeward logo">
-        <img width="40" id="menu" src="images/menu.svg" alt="navigation bar menu button">
+        <img height="40" src="/public/images/homewardlogo.png" alt="homeward logo">
+        <img width="40" id="menu" src="/public/images/menu.svg" alt="navigation bar menu button">
         <ul id="navbar">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="resources.html">GET HELP</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="index.html" class="hover-effectnav">HOME</a></li>
+            <li><a href="resources.html" class="hover-effectnav">GET HELP</a></li>
+            <li><a href="about.html" class="hover-effectnav">ABOUT</a></li>
+            <li><a href="contact.html" class="hover-effectnav">CONTACT</a></li>
         </ul>
-        <a id="volunteer-btn" href="volunteer.html">VOLUNTEER</a>
+        <a id="volunteer-btn" href="volunteer.html" >VOLUNTEER</a>
     </header>
     <nav id="side-nav">
-        <div id="ribbon"><img width="30" src="images/close.svg" alt="close menu button"></div>
+        <div id="ribbon"><img width="30" src="/public/images/close.svg" alt="close menu button"></div>
         <ul id="side-navbar">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="resources.html">GET HELP</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="index.html" class="hover-effectnav">HOME</a></li>
+            <li><a href="resources.html" class="hover-effectnav">GET HELP</a></li>
+            <li><a href="about.html" class="hover-effectnav">ABOUT</a></li>
+            <li><a href="contact.html" class="hover-effectnav">CONTACT</a></li>
             <li><a id="side-volunteer-btn" href="volunteer.html">VOLUNTEER</a></li>
         </ul>
     </nav>
@@ -50,11 +49,12 @@
                     <option value="20" selected>20 Miles</option>
                     <option value="50">50 Miles</option>
                 </select>
-                <input type="submit" id="submit" />Go!
+                <input type="submit" id="submit" />
             </form>
             <hr>
-            <p>1,000,000 search results:</p>
-            <p><em>Please choose a counselor at your best convencience.</em></p>
+            <p class="search-results-title">20 search results:</p>
+            <p class="instructions"><em>Please choose a Food Bank at your best convenience.</em></p>
+
             {{#each results}}
             {{!-- {{#if agcid}} --}}
             <section class="counselor-choice" >
@@ -67,6 +67,41 @@
         </section>
         <section id="map"></section>
     </main>
+        <footer class="footer">
+        <section class="footer-contact">
+            <img src="/public/images/homewardlogo.png" alt="HomeWard Logo">
+        </section>
+        <section class="footer-content">
+            <ul>
+                <li class="footer-content-header">Social</li>
+                <li><a href="https://instagram.com" class="hover-effect">Instagram</a></li>
+                <li><a href="https://twitter.com" class="hover-effect">Twitter</a></li>
+                <li><a href="https://www.facebook.com" class="hover-effect">Facebook</a></li>
+                <li><a href="https://www.youtube.com" class="hover-effect">Youtube</a></li>
+            </ul>
+            <ul>
+                <li class="footer-content-header">Company</li>
+                <li><a href="about.html" class="hover-effect">About</a></li>
+                <li><a href="resources.html" class="hover-effect">Resources</a></li>
+                <li><a href="volunteer.html" class="hover-effect">Volunteer With Us</a></li>
+                <li><a href="contact.html" class="hover-effect">Contact Us</a></li>
+            </ul>
+        </section>
+        <section class="footer-legal">
+            <p>© 2024 HomeWard</p>
+            <ul class="footer-legal-container">
+                <a>
+                    <li>Privacy Policy</li>
+                </a>
+                <a>
+                    <li>Press Information</li>
+                </a>
+                <a>
+                    <li>Language</li>
+                </a>
+            </ul>
+        </section>
+    </footer>
 </body>
 <script src="/public/scripts/index.js"></script>
 <script src="/public/scripts/foodbanks.js"></script>
