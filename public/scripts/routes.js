@@ -108,7 +108,7 @@ const root = path.join(__dirname, '../..')
 app.use(express.static(root))
 app.use(express.json());
 const PORT = process.env.PORT || 8080;
-const apiKey = 'AIzaSyBgAhCPbNjviOE0NapTIt_5lQxRG3GkSRI';
+const apiKey = 'AIzaSyDIi9k8z7Ky5UvJ9peOwLqghN6bLgkIyTo';
 
 //middleware to parese the json data
 app.use(express.json());
@@ -124,6 +124,9 @@ app.get('/searchFoodBanks', async (req, res) => {
 		const geocodeData = await geocodeResponse.json();
 		
         if (geocodeData.results.length === 0) {
+			//console.log("hello");
+			//console.log(geocodeData);
+			console.log(geocodeData.status)
 			return res.status(404).send('No results found for the provided ZIP code');
 		}
 		

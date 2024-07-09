@@ -115,7 +115,7 @@ function fitMapToBounds() {
     map.fitBounds(bounds);
 }
 
-// Function to geocode address (in this case, ZIP code)
+//Function to geocode address (in this case, ZIP code)
 async function geocode(address) {
     return new Promise((resolve, reject) => {
         const geocoder = new google.maps.Geocoder();
