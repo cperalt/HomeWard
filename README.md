@@ -8,12 +8,12 @@ Table of Contents:
 
 * Home Page
 * Get Help
-  -access food resources
-  -affordable housing
-  -find reliable transport
-  -access mental health
-  -I want to donate
-  -Educational Resources
+  * access food resources
+  * affordable housing
+  * find reliable transport
+  * access mental health
+  * I want to donate
+  * Educational Resources
 * About
 * Contact
 * Volunteer
