@@ -6,34 +6,32 @@ HomeWard is a modern and beneficial site that allows users to quickly search and
 
 Table of Contents:
 
-Home Page
-Get Help
+* Home Page
+* Get Help
   -access food resources
   -affordable housing
   -find reliable transport
   -access mental health
   -I want to donate
   -Educational Resources
-  
-About
-Contact
-Volunteer
+* About
+* Contact
+* Volunteer
 
-User authentication: Create a volunteer form to store users info and if they want to store, allow the user to seach based on zipcode to find food banks and or housing counselors.
+# User authentication: 
+Create a volunteer form to store users info and if they want to store, allow the user to seach based on zipcode to find food banks and or housing counselors.
 
 ## Frontend:
+* HTML
+* HBS
+* CSS
+* JavaScript
 
-HTML
-HBS
-CSS
-JavaScript
-
-##Backend:
-
-Node.js
-Express.js
-Database:
-SQL (MySQL)
+## Backend:
+* Node.js
+* Express.js
+* Database:
+* SQL (MySQL)
 
 ## APIs:
 
