@@ -57,13 +57,11 @@
             <p class="instructions"><em>Please choose a Food Bank at your best convenience.</em></p>
 
             {{#each results}}
-            {{!-- {{#if agcid}} --}}
             <section class="counselor-choice">
                 {{#if this.icon}}<img src="{{ this.icon }}" aria-hidden />{{/if}}
                 {{#if this.name}} <p>{{ this.name }}</p> {{/if}}
                 {{#if this.vicinity}} <p>{{ this.vicinity }}</p> {{/if}}
             </section>
-            {{!-- {{else}}{{/if}} --}}
             {{/each}}
         </section>
         <section id="map"></section>
@@ -108,9 +106,4 @@
 <script src="/public/scripts/foodbanks.js"></script>
 <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIi9k8z7Ky5UvJ9peOwLqghN6bLgkIyTo&libraries=places&map_ids=123014699cdb1245&callback=initMap"></script>
-{{!--
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=places"
-    defer></script> --}}
-
 </html>

@@ -108,7 +108,7 @@ const root = path.join(__dirname, '../..')
 app.use(express.static(root))
 app.use(express.json());
 const PORT = process.env.PORT || 8080;
-const apiKey = 'AIzaSyDIi9k8z7Ky5UvJ9peOwLqghN6bLgkIyTo';
+
 
 //middleware to parese the json data
 app.use(express.json());

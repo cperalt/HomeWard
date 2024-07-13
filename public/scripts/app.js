@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 8080;
-const apiKey = process.env.API_KEY || 'AIzaSyBgAhCPbNjviOE0NapTIt_5lQxRG3GkSRI';
+const apiKey = process.env.API_KEY;
 
 const connection = await mysql.createConnection({
     host: process.env.DB_HOST || 'localhost',
@@ -59,7 +59,7 @@ app.get('/searchFoodBanks', async (req, res) => {
         const geocodeData = await geocodeResponse.json();
 
         if (geocodeData.results.length === 0) {
-            return res.status(404).send('No results found for the provided ZIP code');
+            geocodeData = {results: []};
         }
 
         const location = geocodeData.results[0].geometry.location;
