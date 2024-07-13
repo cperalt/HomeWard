@@ -56,7 +56,7 @@ app.get('/searchFoodBanks', async (req, res) => {
     } = req.query;
     try {
         const geocodeResponse = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${zipcode}&key=${apiKey}`);
-        const geocodeData = await geocodeResponse.json();
+        let geocodeData = await geocodeResponse.json();
 
         if (geocodeData.results.length === 0) {
             geocodeData = {results: []};
